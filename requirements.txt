@@ -6,9 +6,9 @@ pillow
 python-multipart
 streamlit
 
-joblib==1.2.0
+joblib
 opencv-python-headless
-pandas==1.5.3
+pandas
 scikit-image
 scikit-learn
 scikeras

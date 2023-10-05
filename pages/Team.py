@@ -14,7 +14,7 @@ fa_em = """
 """
 
 col1, col2 = st.columns((1, 5))
-st.subheader('“Our Team”')
+st.subheader('Our Team')
 st.write('Omdena Sao Paulo chapter was made up of a team from over 10 different timezones. \
     Despite the distances and time separations we manged to get together and successfully \
     collaborate and produce some excellent work.')
@@ -301,7 +301,7 @@ with col2:
         )
 
 
-    with col1:
+    with col2:
         paula = Image.open('assets/Images/foto - Paula Carolina Montagnana.jpg')
         st.image(paula)
         st.header('Paula Montagnana')

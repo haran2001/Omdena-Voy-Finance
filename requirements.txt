@@ -5,3 +5,10 @@ numpy
 pillow
 python-multipart
 streamlit
+
+joblib==1.2.0
+opencv-python-headless
+pandas==1.5.3
+scikit-image
+scikit-learn
+scikeras

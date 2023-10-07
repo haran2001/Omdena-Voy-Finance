@@ -11,12 +11,6 @@ from tensorflow.keras.models import load_model
 import gdown
 from pathlib import Path
 
-# Sequential model (Conv2D + MaxPool)
-# MODEL1 = tf.keras.models.load_model("baseline_resnet50.h5", compile=False)
-# MODEL1 = tf.keras.models.load_model("Omdena_model1.h5", compile=False)
-# MODEL1 = tf.keras.models.load_model('model1.h5', compile=False)
-# MODEL1 = load_model()
-
 model_name = 'withouth_cersc_resnet50_deduplicated_mix_val_train_75acc.h5'
 
 save_dest = Path('models')
@@ -56,6 +50,43 @@ def get_all_predictions(model, img):
 
     return predictions[0]
 
+def get_class(image, newsize, MODEL):
+    image = image.resize(newsize)
+    image = np.asarray(image)
+    img_batch = np.expand_dims(image, 0)
+
+    #Get model predictions
+    predictions = MODEL.predict(img_batch)
+      
+    #Get model predictions for ensemble output
+    all_predictions = get_all_predictions(MODEL, image)
+
+    #Get final prediction
+    predicted_class = CLASS_NAMES[np.argmax(predictions[0])]
+    confidence = np.max(predictions[0])
+
+    return predicted_class, confidence
+
+def get_class_ensemble(image, newsize, MODEL_A, MODEL_B):
+    image = image.resize(newsize)
+    image = np.asarray(image)
+    img_batch = np.expand_dims(image, 0) 
+      
+    #Get model predictions for ensemble output
+    all_predictions_A = get_all_predictions(MODEL_A, image)
+    all_predictions_B = get_all_predictions(MODEL_B, image)
+    all_predictions_ensemble = (all_predictions_A + all_predictions_B)/2
+
+    #Get final prediction
+    predicted_class = CLASS_NAMES[np.argmax(predictions[0])]
+    confidence = np.max(predictions[0])
+
+    #Get final prediction for ensemble
+    predicted_class_ensemble = CLASS_NAMES[np.argmax(all_predictions_ensemble[0])]
+    confidence_ensemble = None
+
+    return predicted_class_ensemble, confidence_ensemble
+    
 #Function to get final predictions
 def predict():
     image = None
@@ -72,33 +103,39 @@ def predict():
         st.image(image)
         newsize1 = (256, 256)
         newsize4 = (256, 256)
-        image1 = image.resize(newsize1)
-        image4 = image.resize(newsize4)
-        image1 = np.asarray(image1)
-        image4 = np.asarray(image4)
-        img_batch1 = np.expand_dims(image1, 0)
-        img_batch4 = np.expand_dims(image4, 0)
 
-        #Get model predictions
-        predictions1 = MODEL1.predict(img_batch1)
-        predictions4 = MODEL4.predict(img_batch4)
+        predicted_class1, confidence1 = get_class(image, newsize1, MODEL1)
+        predicted_class4, confidence4 = get_class(image, newsize4, MODEL4)
+        # predicted_class_ensemble, confidence_ensemble = get_class_ensemble(image, newsize, MODEL1, MODEL4)
         
-        #Get model predictions for ensemble output
-        all_predictions1 = get_all_predictions(MODEL1, image1)
-        all_predictions4 = get_all_predictions(MODEL4, image4)
-        # all_predictions_ensemble = (all_predictions1 + all_predictions4)/2
+        # image1 = image.resize(newsize1)
+        # image4 = image.resize(newsize4)
+        # image1 = np.asarray(image1)
+        # image4 = np.asarray(image4)
+        # img_batch1 = np.expand_dims(image1, 0)
+        # img_batch4 = np.expand_dims(image4, 0)
 
-        #Get final prediction
-        predicted_class1 = CLASS_NAMES[np.argmax(predictions1[0])]
-        confidence1 = np.max(predictions1[0])
+        # #Get model predictions
+        # predictions1 = MODEL1.predict(img_batch1)
+        # predictions4 = MODEL4.predict(img_batch4)
+        
+        # #Get model predictions for ensemble output
+        # all_predictions1 = get_all_predictions(MODEL1, image1)
+        # all_predictions4 = get_all_predictions(MODEL4, image4)
+        # # all_predictions_ensemble = (all_predictions1 + all_predictions4)/2
 
-        predicted_class4 = CLASS_NAMES[np.argmax(predictions4[0])]
-        confidence4 = np.max(predictions4[0])
+        # #Get final prediction
+        # predicted_class1 = CLASS_NAMES[np.argmax(predictions1[0])]
+        # confidence1 = np.max(predictions1[0])
+
+        # predicted_class4 = CLASS_NAMES[np.argmax(predictions4[0])]
+        # confidence4 = np.max(predictions4[0])
 
         #Get final prediction for ensemble
         # predicted_class_ensemble = CLASS_NAMES[np.argmax(all_predictions_ensemble[0])]
         predicted_class_ensemble = None
         confidence_ensemble = None
+
         
         return {"class1": predicted_class1, "confidence1": float(confidence1), "class4": predicted_class4, "confidence4": float(confidence4), "class_ensemble": predicted_class_ensemble, "confidence_ensemble": confidence_ensemble}
     else:
@@ -107,7 +144,6 @@ def predict():
     
 predicted_output = predict()
 st.write("Model Predictions: ")
-# st.write("Prediction from baseline CNN model (183877 parameters): ", predicted_output['class1'])
 st.write("Prediction from Cusomized CNN (BRACOL symptoms): ", predicted_output['class1'])
 st.write("Prediction from Mobilenet-v2 (2667589 parameters): ", predicted_output['class4'])
 st.write("Prediction from Ensemble of Cusomized CNN (BRACOL symptoms) and mobilenet-v2 : ", predicted_output['class_ensemble'])

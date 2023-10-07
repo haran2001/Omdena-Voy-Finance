@@ -14,8 +14,7 @@ from pathlib import Path
 def load_model_h5(path):
     return load_model(path, compile=False)
 
-def load_model_from_gd():
-    model_name = 'withouth_cersc_resnet50_deduplicated_mix_val_train_75acc.h5'
+def load_model_from_gd(model_name):
     save_dest = Path('models')
     save_dest.mkdir(exist_ok=True)
     output = f'models/{model_name}'
@@ -109,23 +108,20 @@ def predict(image, size, MODEL):
     return {"class": predicted_class, "confidence": float(confidence)}
 
 
-
-
-
 # All classes
 CLASS_NAMES = ['Cescospora', 'Healthy', 'Miner', 'Phoma', 'Rust']
 
+# Get uploaded image
 image = get_image()
 
 # Custom CNN    
-# MODEL1 = tf.keras.models.load_model("model_CNN1_BRACOL.h5", compile=False)
 MODEL1 = load_model_h5('model_CNN1_BRACOL.h5')
 # Mobilenet-v2 
-# MODEL4 = tf.keras.models.load_model("Omdena_model4.h5", compile=False)
 MODEL4 = load_model_h5('Omdena_model4.h5')
 
-f_checkpoint = Path(f"models//{model_name}")
 # Resnet-v2
+model_name = 'withouth_cersc_resnet50_deduplicated_mix_val_train_75acc.h5'
+f_checkpoint = Path(f"models//{model_name}")
 if not f_checkpoint.exists():
     load_model_from_gd()
 # else:

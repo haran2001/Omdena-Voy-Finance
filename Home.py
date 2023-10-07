@@ -14,6 +14,27 @@ import urllib.request
 # MODEL1 = tf.keras.models.load_model('model1.h5', compile=False)
 # MODEL1 = load_model()
 
+model_name = 'withouth_cersc_resnet50_deduplicated_mix_val_train_75acc.h5'
+
+save_dest = Path('models')
+save_dest.mkdir(exist_ok=True)
+output = f'models/{model_name}'
+
+@st.cache_resource
+def load_model_h5(path):
+    return load_model(output, compile=False)
+
+def load_model_from_gd():
+    #f_checkpoint = Path(f"models//{model_name}")
+    with st.spinner("Downloading model... this may take awhile! \n Don't stop it!"):
+        gdown.download(id='1--eYkRRQl6CAuXxPFcgiFy0zdp67WTPE', output=output, quiet=False)
+        
+f_checkpoint = Path(f"models//{model_name}")
+if not f_checkpoint.exists():
+    load_model_from_gd()
+else:
+    modelicka = load_model_h5(f_checkpoint)
+    
 MODEL1 = tf.keras.models.load_model("model_CNN1_BRACOL.h5", compile=False)
 # MODEL1 = tf.keras.models.load_model("withouth_cersc_resnet50_deduplicated_mix_val_train_75acc.h5", compile=False)
 

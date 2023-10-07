@@ -7,6 +7,9 @@ import subprocess
 import os
 import urllib.request
 
+from tensorflow.keras.models import load_model
+import gdown
+from pathlib import Path
 
 # Sequential model (Conv2D + MaxPool)
 # MODEL1 = tf.keras.models.load_model("baseline_resnet50.h5", compile=False)
@@ -66,10 +69,7 @@ def predict():
         image = Image.open(upload_camera)
         
     if image is not None:
-        # image = Image.open(upload)
-        # image = image.crop((left, top, right, bottom))
         st.image(image)
-        # newsize1 = (224, 224)
         newsize1 = (256, 256)
         newsize4 = (256, 256)
         image1 = image.resize(newsize1)

@@ -19,7 +19,6 @@ def load_model_from_gd():
     save_dest = Path('models')
     save_dest.mkdir(exist_ok=True)
     output = f'models/{model_name}'
-    f_checkpoint = Path(f"models//{model_name}")
     # f_checkpoint = Path(f"models//{model_name}")
     with st.spinner("Downloading model... this may take awhile! \n Don't stop it!"):
         gdown.download(id='1--eYkRRQl6CAuXxPFcgiFy0zdp67WTPE', output=output, quiet=False)
@@ -125,6 +124,7 @@ MODEL1 = load_model_h5('model_CNN1_BRACOL.h5')
 # MODEL4 = tf.keras.models.load_model("Omdena_model4.h5", compile=False)
 MODEL4 = load_model_h5('Omdena_model4.h5')
 
+f_checkpoint = Path(f"models//{model_name}")
 # Resnet-v2
 if not f_checkpoint.exists():
     load_model_from_gd()

@@ -31,7 +31,7 @@ def get_class(image, newsize, MODEL):
     predictions = MODEL.predict(img_batch)
       
     #Get model predictions for ensemble output
-    all_predictions = get_all_predictions(MODEL, image)
+    # all_predictions = get_all_predictions(MODEL, image)
 
     #Get final prediction
     predicted_class = CLASS_NAMES[np.argmax(predictions[0])]
@@ -111,9 +111,6 @@ def predict(image, size, MODEL):
 # All classes
 CLASS_NAMES = ['Cescospora', 'Healthy', 'Miner', 'Phoma', 'Rust']
 
-# Get uploaded image
-image = get_image()
-
 # Custom CNN    
 MODEL1 = load_model_h5('model_CNN1_BRACOL.h5')
 # Mobilenet-v2 
@@ -132,13 +129,20 @@ newsize1 = (256, 256)
 newsize3 = (224, 224)
 newsize4 = (256, 256)
 
+# Get uploaded image
+image = get_image()
+
 st.write("Model Predictions: ")
-# predicted_output1 = predict(newsize1, MODEL1)
-# st.write("Prediction from Cusomized CNN (BRACOL symptoms): ", predicted_output1['class'])
+if image not None:
+    predicted_output1 = predict(newsize1, MODEL1)
+    st.write("Prediction from Cusomized CNN (BRACOL symptoms): ", predicted_output1['class'])
 
-predicted_output3 = predict(image, newsize3, MODEL3)
-st.write("Prediction from Mobilenet-v2 (2667589 parameters): ", predicted_output3['class'])
+if image not None:
+    predicted_output3 = predict(image, newsize3, MODEL3)
+    st.write("Prediction from Resnet-v2: ", predicted_output3['class'])
+    
+if image not None:
+    predicted_output4 = predict(newsize4, MODEL4)
+    st.write("Prediction from Mobilenet-v2: ", predicted_output4['class'])
 
-# predicted_output4 = predict(newsize4, MODEL4)
-# st.write("Prediction from Mobilenet-v2 (2667589 parameters): ", predicted_output4['class'])
 # st.write("Prediction from Ensemble of Cusomized CNN (BRACOL symptoms) and mobilenet-v2 : ", predicted_output['class_ensemble'])

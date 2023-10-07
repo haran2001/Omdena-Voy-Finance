@@ -86,25 +86,7 @@ def get_image():
         
 #Function to get final predictions
 def predict(image, size, MODEL):
-    # image = None
-    # upload_file = st.file_uploader("Upload your image here...", type=['png', 'jpeg', 'jpg'])
-    # upload_camera = st.camera_input("Or take a picture here...")
-    
-    # if upload_file is not None:
-    #     image = Image.open(upload_file)
-        
-    # if upload_camera is not None:
-    #     image = Image.open(upload_camera)
-        
-    # if image is not None:
-    #     st.image(image)
     predicted_class, confidence = get_class(image, size, MODEL)
-        # predicted_class_ensemble, confidence_ensemble = get_class_ensemble(image, newsize, MODEL1, MODEL4)
-        
-        # predicted_class_ensemble = None
-        # confidence_ensemble = None
-
-        
     return {"class": predicted_class, "confidence": float(confidence)}
 
 
@@ -119,11 +101,13 @@ MODEL4 = load_model_h5('Omdena_model4.h5')
 # Resnet-v2
 model_name = 'withouth_cersc_resnet50_deduplicated_mix_val_train_75acc.h5'
 f_checkpoint = Path(f"models//{model_name}")
+
 if not f_checkpoint.exists():
-    load_model_from_gd()
-# else:
+    load_model_from_gd(model_name)
+
 MODEL3 = load_model_h5(f_checkpoint)
 
+#Resize requirements
 newsize  = (256, 256)
 newsize1 = (256, 256)
 newsize3 = (224, 224)

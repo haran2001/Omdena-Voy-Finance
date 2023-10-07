@@ -12,3 +12,4 @@ pandas
 scikit-image
 scikit-learn
 scikeras
+gdown

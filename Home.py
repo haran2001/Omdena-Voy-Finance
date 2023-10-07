@@ -20,8 +20,8 @@ def load_model_from_gd(model_name):
     output = f'models/{model_name}'
     # f_checkpoint = Path(f"models//{model_name}")
     with st.spinner("Downloading model... this may take awhile! \n Don't stop it!"):
-        # gdown.download(id='1--eYkRRQl6CAuXxPFcgiFy0zdp67WTPE', output=output, quiet=False)
-        gdown.download(id='1--OCc8IBYaZdklXMXOsnsMYU3k1Ld95uSs', output=output, quiet=False)
+        gdown.download(id='1--eYkRRQl6CAuXxPFcgiFy0zdp67WTPE', output=output, quiet=False)
+        # gdown.download(id='1--OCc8IBYaZdklXMXOsnsMYU3k1Ld95uSs', output=output, quiet=False)
 
 def get_class(image, newsize, MODEL):
     image = image.resize(newsize)
@@ -110,7 +110,8 @@ MODEL3 = load_model_h5(f_checkpoint)
 #Resize requirements
 newsize  = (256, 256)
 newsize1 = (256, 256)
-newsize3 = (256, 256)
+# newsize3 = (256, 256)
+newsize3 = (224, 224)
 newsize4 = (256, 256)
 
 # Get uploaded image

@@ -15,7 +15,12 @@ def load_model_h5(path):
     return load_model(path, compile=False)
 
 def load_model_from_gd():
+    model_name = 'withouth_cersc_resnet50_deduplicated_mix_val_train_75acc.h5'
+    save_dest = Path('models')
+    save_dest.mkdir(exist_ok=True)
+    output = f'models/{model_name}'
     f_checkpoint = Path(f"models//{model_name}")
+    # f_checkpoint = Path(f"models//{model_name}")
     with st.spinner("Downloading model... this may take awhile! \n Don't stop it!"):
         gdown.download(id='1--eYkRRQl6CAuXxPFcgiFy0zdp67WTPE', output=output, quiet=False)
 
@@ -64,9 +69,8 @@ def get_class_ensemble(image, newsize, MODEL_A, MODEL_B):
     confidence_ensemble = None
 
     return predicted_class_ensemble, confidence_ensemble
-    
-#Function to get final predictions
-def predict(size, MODEL):
+
+def get_image():
     image = None
     upload_file = st.file_uploader("Upload your image here...", type=['png', 'jpeg', 'jpg'])
     upload_camera = st.camera_input("Or take a picture here...")
@@ -79,7 +83,24 @@ def predict(size, MODEL):
         
     if image is not None:
         st.image(image)
-        predicted_class, confidence = get_class(image, newsize1, MODEL1)
+    
+    return image
+        
+#Function to get final predictions
+def predict(image, size, MODEL):
+    # image = None
+    # upload_file = st.file_uploader("Upload your image here...", type=['png', 'jpeg', 'jpg'])
+    # upload_camera = st.camera_input("Or take a picture here...")
+    
+    # if upload_file is not None:
+    #     image = Image.open(upload_file)
+        
+    # if upload_camera is not None:
+    #     image = Image.open(upload_camera)
+        
+    # if image is not None:
+    #     st.image(image)
+    predicted_class, confidence = get_class(image, size, MODEL)
         # predicted_class_ensemble, confidence_ensemble = get_class_ensemble(image, newsize, MODEL1, MODEL4)
         
         # predicted_class_ensemble = None
@@ -96,19 +117,16 @@ def predict(size, MODEL):
 # All classes
 CLASS_NAMES = ['Cescospora', 'Healthy', 'Miner', 'Phoma', 'Rust']
 
-# Custom CNN    
-MODEL1 = tf.keras.models.load_model("model_CNN1_BRACOL.h5", compile=False)
+image = get_image()
 
+# Custom CNN    
+# MODEL1 = tf.keras.models.load_model("model_CNN1_BRACOL.h5", compile=False)
+MODEL1 = load_model_h5("model_CNN1_BRACOL.h5")
 # Mobilenet-v2 
-MODEL4 = tf.keras.models.load_model("Omdena_model4.h5", compile=False)
+# MODEL4 = tf.keras.models.load_model("Omdena_model4.h5", compile=False)
+MODEL4 = load_model_h5("Omdena_model4.h5")
 
 # Resnet-v2
-model_name = 'withouth_cersc_resnet50_deduplicated_mix_val_train_75acc.h5'
-save_dest = Path('models')
-save_dest.mkdir(exist_ok=True)
-output = f'models/{model_name}'
-f_checkpoint = Path(f"models//{model_name}")
-
 if not f_checkpoint.exists():
     load_model_from_gd()
 # else:
@@ -123,7 +141,7 @@ st.write("Model Predictions: ")
 # predicted_output1 = predict(newsize1, MODEL1)
 # st.write("Prediction from Cusomized CNN (BRACOL symptoms): ", predicted_output1['class'])
 
-predicted_output3 = predict(newsize3, MODEL3)
+predicted_output3 = predict(image, newsize3, MODEL3)
 st.write("Prediction from Mobilenet-v2 (2667589 parameters): ", predicted_output3['class'])
 
 # predicted_output4 = predict(newsize4, MODEL4)

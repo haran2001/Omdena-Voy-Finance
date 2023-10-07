@@ -120,12 +120,12 @@ newsize3 = (224, 224)
 newsize4 = (256, 256)
 
 st.write("Model Predictions: ")
-predicted_output1 = predict(newsize1, MODEL1)
-st.write("Prediction from Cusomized CNN (BRACOL symptoms): ", predicted_output1['class'])
+# predicted_output1 = predict(newsize1, MODEL1)
+# st.write("Prediction from Cusomized CNN (BRACOL symptoms): ", predicted_output1['class'])
 
 predicted_output3 = predict(newsize3, MODEL3)
-st.write("Prediction from Mobilenet-v2 (2667589 parameters): ", predicted_output1['class'])
+st.write("Prediction from Mobilenet-v2 (2667589 parameters): ", predicted_output3['class'])
 
-predicted_output4 = predict(newsize4, MODEL4)
-st.write("Prediction from Mobilenet-v2 (2667589 parameters): ", predicted_output1['class'])
+# predicted_output4 = predict(newsize4, MODEL4)
+# st.write("Prediction from Mobilenet-v2 (2667589 parameters): ", predicted_output4['class'])
 # st.write("Prediction from Ensemble of Cusomized CNN (BRACOL symptoms) and mobilenet-v2 : ", predicted_output['class_ensemble'])

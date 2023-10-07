@@ -130,4 +130,4 @@ if image is not None:
 
 if image is not None:
     predicted_output2 = predict_ensemble(image, newsize, MODEL2, MODEL4)
-    st.write("Prediction from Ensemble of Sequential CNN and Mobilenet-v2 : ", predicted_output2['class_ensemble'])
+    st.write("Prediction from Ensemble of Sequential CNN and Mobilenet-v2 : ", predicted_output2['class'])

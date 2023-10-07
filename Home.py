@@ -133,15 +133,15 @@ newsize4 = (256, 256)
 image = get_image()
 
 st.write("Model Predictions: ")
-if image not None:
+if image is not None:
     predicted_output1 = predict(newsize1, MODEL1)
     st.write("Prediction from Cusomized CNN (BRACOL symptoms): ", predicted_output1['class'])
 
-if image not None:
+if image is not None:
     predicted_output3 = predict(image, newsize3, MODEL3)
     st.write("Prediction from Resnet-v2: ", predicted_output3['class'])
     
-if image not None:
+if image is not None:
     predicted_output4 = predict(newsize4, MODEL4)
     st.write("Prediction from Mobilenet-v2: ", predicted_output4['class'])
 

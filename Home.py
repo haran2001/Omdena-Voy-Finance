@@ -58,10 +58,6 @@ def get_class_ensemble(image, newsize, MODEL_A, MODEL_B):
     all_predictions_B = get_all_predictions(MODEL_B, image)
     all_predictions_ensemble = (all_predictions_A + all_predictions_B)/2
 
-    #Get final prediction
-    predicted_class = CLASS_NAMES[np.argmax(predictions[0])]
-    confidence = np.max(predictions[0])
-
     #Get final prediction for ensemble
     predicted_class_ensemble = CLASS_NAMES[np.argmax(all_predictions_ensemble[0])]
     confidence_ensemble = None

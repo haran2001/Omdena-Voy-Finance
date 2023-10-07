@@ -107,9 +107,8 @@ def predict(image, size, MODEL):
         # confidence_ensemble = None
 
         
-        return {"class": predicted_class, "confidence": float(confidence)}
-    else:
-        return {"class": "No Image", "confidence": 0, "class4": "No Image"}
+    return {"class": predicted_class, "confidence": float(confidence)}
+
 
 
 

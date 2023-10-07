@@ -89,7 +89,7 @@ def predict(image, size, MODEL):
 # Function to get final predictions from ensemble
 def predict_ensemble(image, size, MODEL_A, MODEL_B):
     predicted_class, confidence = get_class_ensemble(image, size, MODEL_A, MODEL_B)
-    return {"class": predicted_class, "confidence": float(confidence)}
+    return {"class": predicted_class, "confidence": confidence}
 
 # All classes
 CLASS_NAMES = ['Cescospora', 'Healthy', 'Miner', 'Phoma', 'Rust']

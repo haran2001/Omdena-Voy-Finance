@@ -94,9 +94,9 @@ def predict(image, size, MODEL):
 CLASS_NAMES = ['Cescospora', 'Healthy', 'Miner', 'Phoma', 'Rust']
 
 # Custom CNN    
-MODEL1 = load_model_h5('model_CNN1_BRACOL.h5')
+MODEL1 = load_model_h5('assets/models/model_CNN1_BRACOL.h5')
 # Mobilenet-v2 
-MODEL4 = load_model_h5('Omdena_model4.h5')
+MODEL4 = load_model_h5('assets/models/Omdena_model4.h5')
 
 # Resnet-v2
 model_name = 'withouth_cersc_resnet50_deduplicated_mix_val_train_75acc.h5'

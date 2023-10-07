@@ -12,7 +12,7 @@ from pathlib import Path
 
 @st.cache_resource
 def load_model_h5(path):
-    return load_model(output, compile=False)
+    return load_model(path, compile=False)
 
 def load_model_from_gd():
     f_checkpoint = Path(f"models//{model_name}")
@@ -107,7 +107,7 @@ model_name = 'withouth_cersc_resnet50_deduplicated_mix_val_train_75acc.h5'
 save_dest = Path('models')
 save_dest.mkdir(exist_ok=True)
 output = f'models/{model_name}'
-# f_checkpoint = Path(f"models//{model_name}")
+f_checkpoint = Path(f"models//{model_name}")
 
 if not f_checkpoint.exists():
     load_model_from_gd()

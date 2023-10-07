@@ -30,9 +30,6 @@ def get_class(image, newsize, MODEL):
     #Get model predictions
     predictions = MODEL.predict(img_batch)
       
-    #Get model predictions for ensemble output
-    # all_predictions = get_all_predictions(MODEL, image)
-
     #Get final prediction
     predicted_class = CLASS_NAMES[np.argmax(predictions[0])]
     confidence = np.max(predictions[0])
@@ -60,7 +57,7 @@ def get_class_ensemble(image, newsize, MODEL_A, MODEL_B):
 
     #Get final prediction for ensemble
     predicted_class_ensemble = CLASS_NAMES[np.argmax(all_predictions_ensemble[0])]
-    confidence_ensemble = None
+    confidence_ensemble = np.max(predicted_class_ensemble[0])
 
     return predicted_class_ensemble, confidence_ensemble
 
@@ -89,7 +86,7 @@ def predict(image, size, MODEL):
 # Function to get final predictions from ensemble
 def predict_ensemble(image, size, MODEL_A, MODEL_B):
     predicted_class, confidence = get_class_ensemble(image, size, MODEL_A, MODEL_B)
-    return {"class": predicted_class, "confidence": confidence}
+    return {"class": predicted_class, "confidence": float(confidence)}
 
 # All classes
 CLASS_NAMES = ['Cescospora', 'Healthy', 'Miner', 'Phoma', 'Rust']

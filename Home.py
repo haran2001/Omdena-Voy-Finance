@@ -120,10 +120,10 @@ image = get_image()
 
 # Custom CNN    
 # MODEL1 = tf.keras.models.load_model("model_CNN1_BRACOL.h5", compile=False)
-MODEL1 = load_model_h5("model_CNN1_BRACOL.h5")
+MODEL1 = load_model_h5('model_CNN1_BRACOL.h5')
 # Mobilenet-v2 
 # MODEL4 = tf.keras.models.load_model("Omdena_model4.h5", compile=False)
-MODEL4 = load_model_h5("Omdena_model4.h5")
+MODEL4 = load_model_h5('Omdena_model4.h5')
 
 # Resnet-v2
 if not f_checkpoint.exists():

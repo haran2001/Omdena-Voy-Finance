@@ -25,21 +25,6 @@ def load_model_from_gd():
     #f_checkpoint = Path(f"models//{model_name}")
     with st.spinner("Downloading model... this may take awhile! \n Don't stop it!"):
         gdown.download(id='1--eYkRRQl6CAuXxPFcgiFy0zdp67WTPE', output=output, quiet=False)
-        
-f_checkpoint = Path(f"models//{model_name}")
-if not f_checkpoint.exists():
-    load_model_from_gd()
-else:
-    modelicka = load_model_h5(f_checkpoint)
-    
-MODEL1 = tf.keras.models.load_model("model_CNN1_BRACOL.h5", compile=False)
-# MODEL1 = tf.keras.models.load_model("withouth_cersc_resnet50_deduplicated_mix_val_train_75acc.h5", compile=False)
-
-# Mobilenet-v2 
-MODEL4 = tf.keras.models.load_model("Omdena_model4.h5", compile=False)
-# MODEL4 = tf.keras.models.load_model("model_CNN1_BRACOL.h5", compile=False)
-
-CLASS_NAMES = ['Cescospora', 'Healthy', 'Miner', 'Phoma', 'Rust']
 
 #Function to get prediction array for a model (used in ensembling)
 def get_all_predictions(model, img):
@@ -101,38 +86,17 @@ def predict():
         
     if image is not None:
         st.image(image)
+        newsize = (256, 256)
         newsize1 = (256, 256)
+        newsize3 = (224, 224)
         newsize4 = (256, 256)
 
         predicted_class1, confidence1 = get_class(image, newsize1, MODEL1)
-        predicted_class4, confidence4 = get_class(image, newsize4, MODEL4)
-        # predicted_class_ensemble, confidence_ensemble = get_class_ensemble(image, newsize, MODEL1, MODEL4)
+        # predicted_class4, confidence4 = get_class(image, newsize4, MODEL4)
+        predicted_class4, confidence4 = get_class(image, newsize3, MODEL3)
+    
+        predicted_class_ensemble, confidence_ensemble = get_class_ensemble(image, newsize, MODEL1, MODEL4)
         
-        # image1 = image.resize(newsize1)
-        # image4 = image.resize(newsize4)
-        # image1 = np.asarray(image1)
-        # image4 = np.asarray(image4)
-        # img_batch1 = np.expand_dims(image1, 0)
-        # img_batch4 = np.expand_dims(image4, 0)
-
-        # #Get model predictions
-        # predictions1 = MODEL1.predict(img_batch1)
-        # predictions4 = MODEL4.predict(img_batch4)
-        
-        # #Get model predictions for ensemble output
-        # all_predictions1 = get_all_predictions(MODEL1, image1)
-        # all_predictions4 = get_all_predictions(MODEL4, image4)
-        # # all_predictions_ensemble = (all_predictions1 + all_predictions4)/2
-
-        # #Get final prediction
-        # predicted_class1 = CLASS_NAMES[np.argmax(predictions1[0])]
-        # confidence1 = np.max(predictions1[0])
-
-        # predicted_class4 = CLASS_NAMES[np.argmax(predictions4[0])]
-        # confidence4 = np.max(predictions4[0])
-
-        #Get final prediction for ensemble
-        # predicted_class_ensemble = CLASS_NAMES[np.argmax(all_predictions_ensemble[0])]
         predicted_class_ensemble = None
         confidence_ensemble = None
 
@@ -141,6 +105,23 @@ def predict():
     else:
         return {"class1": "No Image", "confidence1": 0, "class4": "No Image", "confidence4": "No Image", "class_ensemble": "No Image", "confidence_ensemble": "No Image"}
 
+
+
+
+# All classes
+CLASS_NAMES = ['Cescospora', 'Healthy', 'Miner', 'Phoma', 'Rust']
+
+# Custom CNN    
+MODEL1 = tf.keras.models.load_model("model_CNN1_BRACOL.h5", compile=False)
+
+# Mobilenet-v2 
+MODEL4 = tf.keras.models.load_model("Omdena_model4.h5", compile=False)
+
+f_checkpoint = Path(f"models//{model_name}")
+if not f_checkpoint.exists():
+    load_model_from_gd()
+else:
+    MODEL3 = load_model_h5(f_checkpoint)
     
 predicted_output = predict()
 st.write("Model Predictions: ")

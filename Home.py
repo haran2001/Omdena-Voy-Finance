@@ -110,7 +110,7 @@ MODEL3 = load_model_h5(f_checkpoint)
 #Resize requirements
 newsize  = (256, 256)
 newsize1 = (256, 256)
-newsize3 = (224, 224)
+newsize3 = (256, 256)
 newsize4 = (256, 256)
 
 # Get uploaded image

@@ -68,6 +68,7 @@ def get_class_ensemble(image, newsize, MODEL_A, MODEL_B):
 
     return predicted_class_ensemble, confidence_ensemble
 
+#Wait until image is uplaoded and obtain image
 def get_image():
     image = None
     upload_file = st.file_uploader("Upload your image here...", type=['png', 'jpeg', 'jpg'])
@@ -84,20 +85,25 @@ def get_image():
     
     return image
         
-#Function to get final predictions
+# Function to get final predictions
 def predict(image, size, MODEL):
     predicted_class, confidence = get_class(image, size, MODEL)
     return {"class": predicted_class, "confidence": float(confidence)}
 
+# Function to get final predictions from ensemble
+def predict_ensemble(image, size, MODEL_A, MODEL_B):
+    predicted_class, confidence = get_class_ensemble(image, size, MODEL_A, MODEL_B)
+    return {"class": predicted_class, "confidence": float(confidence)}
 
 # All classes
 CLASS_NAMES = ['Cescospora', 'Healthy', 'Miner', 'Phoma', 'Rust']
 
 # Custom CNN    
 MODEL1 = load_model_h5('assets/models/model_CNN1_BRACOL.h5')
+# Sequential CNN -v2 
+MODEL2 = load_model_h5('assets/models/Omdena_model1.h5')
 # Mobilenet-v2 
 MODEL4 = load_model_h5('assets/models/Omdena_model4.h5')
-
 # Resnet-v2
 model_name = 'withouth_cersc_resnet50_deduplicated_mix_val_train_75acc.h5'
 f_checkpoint = Path(f"models//{model_name}")
@@ -129,4 +135,6 @@ if image is not None:
     predicted_output4 = predict(image, newsize4, MODEL4)
     st.write("Prediction from Mobilenet-v2: ", predicted_output4['class'])
 
-# st.write("Prediction from Ensemble of Cusomized CNN (BRACOL symptoms) and mobilenet-v2 : ", predicted_output['class_ensemble'])
+if image is not None:
+    predicted_output2 = predict_ensemble(image, newsize, MODEL2, MODEL4)
+    st.write("Prediction from Ensemble of Sequential CNN and Mobilenet-v2 : ", predicted_output2['class_ensemble'])

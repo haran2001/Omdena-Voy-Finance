@@ -23,6 +23,8 @@ import gdown
 from pathlib import Path
 
 
+# All classes
+CLASS_NAMES = ['Cescospora', 'Healthy', 'Miner', 'Phoma', 'Rust']
 
 @st.cache_resource
 def load_model_h5(path):

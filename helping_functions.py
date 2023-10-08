@@ -6,19 +6,14 @@ import numpy as np
 import cv2 as cv
 import joblib
 from tensorflow.keras.models import load_model
-# import keras_model as km
 import sklearn
-# import scikeras
 
-# import numpy as np
 from io import BytesIO
 from PIL import Image
 import tensorflow as tf
-# import streamlit as st
 import subprocess
 import os
 import urllib.request
-# from tensorflow.keras.models import load_model
 import gdown
 from pathlib import Path
 

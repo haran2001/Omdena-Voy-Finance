@@ -12,7 +12,9 @@ MODEL2 = load_model_h5('assets/models/Omdena_model1.h5')
 MODEL4 = load_model_h5('assets/models/Omdena_model4.h5')
 
 # Resnet-v2
-if verify_checkpoint('withouth_cersc_resnet50_deduplicated_mix_val_train_75acc.h5'):
+model3 = 'withouth_cersc_resnet50_deduplicated_mix_val_train_75acc.h5'
+f_checkpoint = Path(f"assets/models//{model3}")
+if verify_checkpoint(model3, f_checkpoint):
     MODEL3 = load_model_h5(f_checkpoint)
 
 #Resize requirements

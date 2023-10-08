@@ -25,8 +25,7 @@ CLASS_NAMES = ['Cescospora', 'Healthy', 'Miner', 'Phoma', 'Rust']
 def load_model_h5(path):
     return load_model(path, compile=False)
 
-def verify_checkpoint(model_name):
-    f_checkpoint = Path(f"assets/models//{model_name}")
+def verify_checkpoint(model_name, f_checkpoint):
     if not f_checkpoint.exists():
         load_model_from_gd(model_name)
     return f_checkpoint.exists()

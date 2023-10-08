@@ -1,14 +1,4 @@
-# import numpy as np
-# from io import BytesIO
-# from PIL import Image
-# import tensorflow as tf
 import streamlit as st
-# import subprocess
-# import os
-# import urllib.request
-# from tensorflow.keras.models import load_model
-# import gdown
-# from pathlib import Path
 from helping_functions import load_model_h5, load_model_from_gd, predict, predict_ensemble, get_image
 
 # Custom CNN    

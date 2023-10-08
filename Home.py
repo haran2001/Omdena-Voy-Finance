@@ -11,9 +11,6 @@ import gdown
 from pathlib import Path
 from helping_functions import load_model_h5, load_model_from_gd, predict, predict_ensemble, get_image
 
-# All classes
-CLASS_NAMES = ['Cescospora', 'Healthy', 'Miner', 'Phoma', 'Rust']
-
 # Custom CNN    
 MODEL1 = load_model_h5('assets/models/model_CNN1_BRACOL.h5')
 # Sequential CNN -v2 

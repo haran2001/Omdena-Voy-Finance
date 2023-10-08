@@ -9,7 +9,7 @@ import urllib.request
 from tensorflow.keras.models import load_model
 import gdown
 from pathlib import Path
-from helping_functions import load_model_h5, load_model_from_gd, predict, predict_ensemble
+from helping_functions import load_model_h5, load_model_from_gd, predict, predict_ensemble, get_image
 
 # All classes
 CLASS_NAMES = ['Cescospora', 'Healthy', 'Miner', 'Phoma', 'Rust']

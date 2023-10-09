@@ -280,7 +280,7 @@ with col4:
 
 
 with col1:
-    anastasiia = Image.open('assets/Images/digital-photo - Dimitra Muni.JPG')
+    anastasiia = Image.open('assets/Images/avatar - Anastasya Marchenko.jpg')
     st.image(anastasiia)
     st.header('Anastasiia Marchenko')
     st.subheader('Task 8: Webapp Deployment')
@@ -302,7 +302,7 @@ with col1:
 
 
 with col2:
-    aiman = Image.open('assets/Images/foto - Paula Carolina Montagnana.jpg')
+    aiman = Image.open('assets/Images/passport_size_photo - Aiman Lameesa.jpeg')
     st.image(aiman)
     st.header('Aiman Lameesa')
     st.subheader('Task 9: Final Paper')
@@ -323,7 +323,7 @@ with col2:
     )
 
 with col3:
-    dimitra = Image.open('assets/Images/avatar - Anastasya Marchenko.jpg')
+    dimitra = Image.open('assets/Images/digital-photo - Dimitra Muni.JPG')
     st.image(dimitra)
     st.header('Dimitra Muni')
     st.subheader('Task 7: Webapp Development')
@@ -345,7 +345,7 @@ with col3:
 
 
 with col4:
-    paula = Image.open('assets/Images/passport_size_photo - Aiman Lameesa.jpeg')
+    paula = Image.open('assets/Images/foto - Paula Carolina Montagnana.jpg')
     st.image(paula)
     st.header('Paula Montagnana')
     st.subheader('Task 9: Final Paper')

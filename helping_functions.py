@@ -82,9 +82,9 @@ def get_class_ensemble(image, newsize, MODEL_A, MODEL_B):
 def get_image():
     image = None
     st.subheader('Upload image here:')
-    upload_file = st.file_uploader(type=['png', 'jpeg', 'jpg'])
+    upload_file = st.file_uploader('', type=['png', 'jpeg', 'jpg'])
     st.subheader('Take a photo here:')
-    upload_camera = st.camera_input()
+    upload_camera = st.camera_input('')
     
     if upload_file is not None:
         image = Image.open(upload_file)

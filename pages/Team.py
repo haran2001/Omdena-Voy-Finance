@@ -80,12 +80,12 @@ with col3:
     st.write("\n")
     st.write(
         fa_li,
-        '[linkedin.com/in/hariharan-ayappane](https://www.linkedin.com/in/hariharan-ayappane)',
+        '[linkedin.com/in/tacio-barros](https://www.linkedin.com/in/tacio-barros)',
         unsafe_allow_html=True
     )
     st.write(
         fa_li,
-        '[github.com/haran2001](https://github.com/haran2001)',
+        '[github.com/TassHub](https://github.com/TassHub)',
         unsafe_allow_html=True
     )
     

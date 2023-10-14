@@ -13,7 +13,7 @@ st.markdown('''
 </style>
 ''', unsafe_allow_html=True)
 
-IMAGE_SIZE = (800, 800)
+IMAGE_SIZE = (1028, 1028)
 
 col1, col2 = st.columns([2,1])
 # with col1:
@@ -21,7 +21,7 @@ st.subheader("Siamese network (MobileNetV2 architecture)")
 flowchart = Image.open('assets/Images/image6.png').resize(IMAGE_SIZE)
 st.image(flowchart)
 # with col2:
-st.subheader("Steps")
+st.subheader("Working")
 st.write("The Siamese Network architecture is used for the coffee disease classification using images. \
 The main goal for using this network is to build an embedding space where the different classes are separated into distinct clusters. \
 The siamese network architecture is used to generate feature embeddings such that intra-class image features are close to each other in the embedding space, \

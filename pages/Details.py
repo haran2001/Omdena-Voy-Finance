@@ -13,7 +13,7 @@ st.markdown('''
 </style>
 ''', unsafe_allow_html=True)
 
-IMAGE_SIZE = (1028, 1028)
+IMAGE_SIZE = (800, 800)
 
 col1, col2 = st.columns([2,1])
 st.subheader("Siamese network (MobileNetV2 architecture)")
@@ -43,12 +43,12 @@ image6 = Image.open('assets/Images/image6.png').resize(IMAGE_SIZE)
 st.image(image6)
 st.subheader("Working")
 st.write("Detailed description of the Customised CNN model Architecture:\
-\
-1. Rescaling Layer (Input Layer):\
+1. Rescaling Layer (Input Layer):\n\
 This is the input layer, and it's not a part of the neural network itself. \
 It simply scales the pixel values of the input images to a specified range.\
 In this case, it scales the pixel values of the input images from [0, 255] to [0, 1], which is common for neural network input.\
-2. Convolutional Layers:\
+\n\
+2. Convolutional Layers:\n\
 Each convolution has a ReLU activation function, which adds non-linearity to the model.\
 The neural network architecture includes a series of convolutional layers with progressively increasing complexity. \
 The first convolutional layer employs 32 filters of a 3x3 kernel size, resulting in 32 feature maps. \
@@ -62,27 +62,32 @@ resulting in an output shape of (32, 8, 8, 320) and 737,600 parameters.\
 The seventh convolutional layer incorporates 384 filters, producing an output shape of (32, 4, 4, 384) and 1,106,304 parameters. \
 Finally, the eighth layer employs 448 filters, yielding an output shape of (32, 2, 2, 448) and 1,548,736 parameters. \
 These layers progressively capture and extract increasingly complex features from the input data, which is essential for the neural network's overall performance.\
-3. Max-Pooling Layers\
+\n\
+3. Max-Pooling Layers\n\
 In this neural network architecture, a series of eight Max-Pooling layers progressively reduce the spatial dimensions of the feature maps. \
 Max-Pooling Layer 1, the initial layer, employs MaxPooling2D and yields an output shape of (32, 128, 128, 32), effectively reducing spatial dimensions while retaining essential information to alleviate computational demands. \
 Subsequent Max-Pooling layers follow a similar pattern, with Layer 2 producing an output shape of (32, 64, 64, 64), and each subsequent layer further reducing spatial dimensions. \
 Layer 8 serves as the final stage, compressing the feature maps to a 1x1 spatial dimension, resulting in an output shape of (32, 1, 1, 448). \
 These Max-Pooling layers collectively contribute to feature reduction, a critical process in convolutional neural networks for feature extraction and dimensionality reduction.\
-4. Flattening Layer\
+\n\
+4. Flattening Layer\n\
 The Flatten Layer takes the 1x1x448 feature maps and converts them into a 1D vector with an output shape of (32, 448), preparing them for input into the fully connected layers. \
-5. Dense Layer 1\
+5. Dense Layer 1\n\
 Next, Dense Layer 1, with an output shape of (32, 64) and 28,736 parameters. This layer has 64 nodes followed by ReLU activation function. further processes these features.\
 It's a fully connected layer with 64 neurons, contributing to feature refinement.\
-\
-6. Batch Normalisation\
+\n\
+6. Batch Normalisation\n\
  The Batch Normalisation Layer comes after, maintaining the output shape at (32, 64). \
 It serves to normalise the activations from the previous layer, enhancing convergence speed and overall training stability. \
-\
-7. Dropout Layer\
+\n\
+7. Dropout Layer\n\
 The Dropout Layer, still with an output shape of (32, 64)Dropout is a regularisation technique that randomly drops a fraction of neurons during training with the probability 0.5, guarding against overfitting. \
- \
-7. Dense Layer 2 \
+ \n\
+7. Dense Layer 2 \n\
 Dense Layer 2, the output layer, has an output shape of (32, 5) with 325 parameters. It consists of 5 neurons, one for each class in the classification task, \
-producing the final predictions. This layer uses Soft-Max activation to compute the probability for each of the five classes. This model consists of a series of convolutional and max-pooling layers for feature extraction, followed by fully connected layers for classification. Batch normalisation and dropout layers are used for regularisation and stability during training. ")
+producing the final predictions. This layer uses Soft-Max activation to compute the probability for each of the five classes. \
+This model consists of a series of convolutional and max-pooling layers for feature extraction, followed by fully connected layers for classification. \
+Batch normalisation and dropout layers are used for regularisation and stability during training. \
+")
 
 # st.write("hello world")

@@ -100,7 +100,7 @@ def get_image():
     else:
         st.session_state.disabled = True
     
-    return image, st.session_state.disabled
+    return image
         
 # Function to get final predictions
 def predict(image, size, MODEL):

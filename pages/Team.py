@@ -23,11 +23,11 @@ st.write('All involved played an important role to the outcomes of the project.'
 
 col1, col2, col3, col4 = st.columns((1, 1, 1, 1))
 
-
+IMAGE_SIZE = (128, 128)
 
 with col1:
-    wallace = Image.open('assets/Images/foto_linkedin_2 - Wallace Ferreira.jpg').resize((108, 108))
-    # wallace = wallace.resize((108, 108))
+    wallace = Image.open('assets/Images/foto_linkedin_2 - Wallace Ferreira.jpg').resize(IMAGE_SIZE)
+    # wallace = wallace.resize(IMAGE_SIZE)
     st.image(wallace)
     st.header('Wallace G. Ferreira')
     st.subheader('Task 1: Research Knowledge Brainstorming')
@@ -48,7 +48,7 @@ with col1:
     )
 
 with col2:
-    hari = Image.open('assets/Images/hari - Hariharan Ayappane.jpg').resize((108, 108))
+    hari = Image.open('assets/Images/hari - Hariharan Ayappane.jpg').resize(IMAGE_SIZE)
     st.image(hari)
     st.header('Hariharan')
     st.subheader('Task 8: Webapp Deployment')
@@ -70,7 +70,7 @@ with col2:
 
 
 with col3:
-    TB = Image.open('assets/Images/FB_IMG_1542851662878 - Tácio Barros.jpg').resize((108, 108))
+    TB = Image.open('assets/Images/FB_IMG_1542851662878 - Tácio Barros.jpg').resize(IMAGE_SIZE)
     st.image(TB)
     st.header('TÃ¡cio Fonseca Barros')
     st.subheader('Task 9: Final Paper')
@@ -110,7 +110,7 @@ with col4:
     )
     
 with col1:
-    lucas = Image.open('assets/Images/eu_cortado - Lucas Vasconcelos.png').resize((108, 108))
+    lucas = Image.open('assets/Images/eu_cortado - Lucas Vasconcelos.png').resize(IMAGE_SIZE)
     st.image(lucas)
     st.header('Lucas Vasconcelos Rocha')
     st.subheader('Task 4: Models Building')
@@ -132,7 +132,7 @@ with col1:
 
 
 with col2:
-    juan = Image.open('assets/Images/JCO2 - Juan Olano.jpeg').resize((108, 108))
+    juan = Image.open('assets/Images/JCO2 - Juan Olano.jpeg').resize(IMAGE_SIZE)
     st.image(juan)
     st.header('Juan Olano')
     st.subheader('Task 4: Models Building')
@@ -154,7 +154,7 @@ with col2:
 
 
 with col3:
-    ss = Image.open('assets/Images/WhatsApp Image 2023-07-25 at 12.50.18 PM - Sourabh Singhal.jpeg').resize((108, 108))
+    ss = Image.open('assets/Images/WhatsApp Image 2023-07-25 at 12.50.18 PM - Sourabh Singhal.jpeg').resize(IMAGE_SIZE)
     st.image(ss)
     st.header('SOURABH SINGHAL')
     st.subheader('Task 2: Data Collection Preprocessing')
@@ -197,7 +197,7 @@ with col4:
     )
 
 with col1:
-    tamiris = Image.open('assets/Images/foto2_t - Tamiris Crepalde.jpg').resize((108, 108))
+    tamiris = Image.open('assets/Images/foto2_t - Tamiris Crepalde.jpg').resize(IMAGE_SIZE)
     st.image(tamiris)
     st.header('Tamiris Crepalde')
     st.subheader('Task 2: Data Collection Preprocessing')
@@ -240,7 +240,7 @@ with col2:
 
 
 with col3:
-    leul = Image.open('assets/Images/omd - leul assaminew.jpg').resize((108, 108))
+    leul = Image.open('assets/Images/omd - leul assaminew.jpg').resize(IMAGE_SIZE)
     st.image(leul)
     st.header('Leul Assaminew')
     st.subheader('Task 4: Models Building')
@@ -261,7 +261,7 @@ with col3:
     )
 
 with col4:
-    swati = Image.open('assets/Images/SRZPH - Swati Zambre.jpg').resize((108, 108))
+    swati = Image.open('assets/Images/SRZPH - Swati Zambre.jpg').resize(IMAGE_SIZE)
     st.image(swati)
     st.header('Swati Zambre')
     st.subheader('Task 6: Models Fine Tuning Validation')
@@ -283,7 +283,7 @@ with col4:
 
 
 with col1:
-    anastasiia = Image.open('assets/Images/avatar - Anastasya Marchenko.jpg').resize((108, 108))
+    anastasiia = Image.open('assets/Images/avatar - Anastasya Marchenko.jpg').resize(IMAGE_SIZE)
     st.image(anastasiia)
     st.header('Anastasiia Marchenko')
     st.subheader('Task 8: Webapp Deployment')
@@ -305,7 +305,7 @@ with col1:
 
 
 with col2:
-    aiman = Image.open('assets/Images/passport_size_photo - Aiman Lameesa.jpeg').resize((108, 108))
+    aiman = Image.open('assets/Images/passport_size_photo - Aiman Lameesa.jpeg').resize(IMAGE_SIZE)
     st.image(aiman)
     st.header('Aiman Lameesa')
     st.subheader('Task 9: Final Paper')
@@ -326,7 +326,7 @@ with col2:
     )
 
 with col3:
-    dimitra = Image.open('assets/Images/digital-photo - Dimitra Muni.JPG').resize((108, 108))
+    dimitra = Image.open('assets/Images/digital-photo - Dimitra Muni.JPG').resize(IMAGE_SIZE)
     st.image(dimitra)
     st.header('Dimitra Muni')
     st.subheader('Task 7: Webapp Development')
@@ -348,7 +348,7 @@ with col3:
 
 
 with col4:
-    paula = Image.open('assets/Images/foto - Paula Carolina Montagnana.jpg').resize((108, 108))
+    paula = Image.open('assets/Images/foto - Paula Carolina Montagnana.jpg').resize(IMAGE_SIZE)
     st.image(paula)
     st.header('Paula Montagnana')
     st.subheader('Task 9: Final Paper')
@@ -369,7 +369,7 @@ with col4:
     )
 
 with col1:
-    ksenia = Image.open('assets/Images/IMG_5151 - Kseniya Trusova.JPG').resize((108, 108))
+    ksenia = Image.open('assets/Images/IMG_5151 - Kseniya Trusova.JPG').resize(IMAGE_SIZE)
     st.image(ksenia)
     st.header('Ksenia Trusova')
     st.subheader('Task 9: Final Paper')
@@ -390,7 +390,7 @@ with col1:
     )
 
 with col2:
-    whaner = Image.open('assets/Images/whaner_mam - Whaner Endo.jpg').resize((108, 108))
+    whaner = Image.open('assets/Images/whaner_mam - Whaner Endo.jpg').resize(IMAGE_SIZE)
     st.image(whaner)
     st.header('Whaner Endo')
     st.subheader('Task 2: Data Collection Preprocessing')

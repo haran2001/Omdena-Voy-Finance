@@ -42,7 +42,7 @@ with col1:
     )
     st.write(
         fa_li,
-        '[github.com/haran2001][[github.com/haran2001]]',
+        '[github.com/wallacegferreira](https://github.com/wallacegferreira)',
         unsafe_allow_html=True
     )
 

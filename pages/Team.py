@@ -409,7 +409,6 @@ with col2:
     )
     
 with col3:
-    st.image(jebathurai)
     st.header('Jebathurai I Barnabas')
     st.subheader('Task 1: Research Knowledge Brainstorming')
     st.subheader('Team Member')

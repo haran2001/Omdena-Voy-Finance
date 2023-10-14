@@ -13,7 +13,7 @@ st.markdown('''
 </style>
 ''', unsafe_allow_html=True)
 
-IMAGE_SIZE = (512, 512)
+IMAGE_SIZE = (800, 800)
 
 col1, col2 = st.columns([2,1])
 # with col1:

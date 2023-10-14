@@ -2,7 +2,8 @@ import streamlit as st
 import pandas as pd
 from PIL import Image
 from helping_functions import load_css
-st.set_page_config(page_title='The Team', layout='wide')
+# st.set_page_config(page_title='The Team', layout='wide')
+st.set_page_config(page_title='The Team', page_icon=':herb:', initial_sidebar_state='auto',  layout='wide')
 
 load_css()
 

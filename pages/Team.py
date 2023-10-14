@@ -22,7 +22,30 @@ st.write('All involved played an important role to the outcomes of the project.'
 
 col1, col2, col3, col4 = st.columns((1, 1, 1, 1))
 
+
+
 with col1:
+    wallace = Image.open('assets/Images/foto_linkedin_2 - Wallace Ferreira.jpg')
+    st.image(wallace)
+    st.header('Wallace G. Ferreira')
+    st.subheader('Task 1: Research Knowledge Brainstorming')
+    st.subheader('Chapter Lead')
+    st.write('"I am a data scientist with a passion for continuous learning. I am deeply interested in leveraging the power of science, technology, and artificial intelligence to make a positive impact on society. I am Chapter Lead at Omdena São Paulo Chapter."')
+    st.write("\n")
+    st.write("\n")
+    st.write("\n")
+    st.write(
+        fa_li,
+        '[linkedin.com/in/wallace-ferreira/](https://www.linkedin.com/in/wallace-ferreira-69065910/)',
+        unsafe_allow_html=True
+    )
+    st.write(
+        fa_li,
+        '[github.com/haran2001][[github.com/haran2001]]',
+        unsafe_allow_html=True
+    )
+
+with col2:
     hari = Image.open('assets/Images/hari - Hariharan Ayappane.jpg')
     st.image(hari)
     st.header('Hariharan')
@@ -40,28 +63,6 @@ with col1:
     st.write(
         fa_li,
         '[github.com/haran2001](https://github.com/haran2001)',
-        unsafe_allow_html=True
-    )
-
-
-with col2:
-    aditya = Image.open('assets/Images/Aditya Raj - Aditya Raj.jpg')
-    st.image(aditya)
-    st.header('Aditya Raj')
-    st.subheader('Task 3: Data Augmentation')
-    st.subheader('Task co-lead')
-    st.write('"Do research whether we use traditional method or use styleGan2 for data augumentation. I used tensorflow for data augumentation."')
-    st.write("\n")
-    st.write("\n")
-    st.write("\n")
-    st.write(
-        fa_li,
-        '[linkedin.com/in/aditya-raj01](https://www.linkedin.com/in/aditya-raj01/)',
-        unsafe_allow_html=True
-    )
-    st.write(
-        fa_li,
-        '[https://github.com/Adityaraj0021)',
         unsafe_allow_html=True
     )
 
@@ -362,5 +363,71 @@ with col4:
     st.write(
         fa_li,
         '[github.com/p-montagnana](https://github.com/p-montagnana)',
+        unsafe_allow_html=True
+    )
+
+with col1:
+    jebathurai = Image.open('assets/Images/IMG_5151 - Kseniya Trusova.JPG')
+    st.image(jebathurai)
+    st.header('Jebathurai I Barnabas')
+    st.subheader('Task 1: Research Knowledge Brainstorming')
+    st.subheader('Team Member')
+    st.write('After thorough planning and brainstorming, I have meticulously outlined a data science project, considering various aspects such as data sources, methodologies, and potential outcomes.')
+    st.write("\n")
+    st.write("\n")
+    st.write("\n")
+    st.write(
+        fa_li,
+        '[linkedin.com/in/jebathurai-barnabas](https://in.linkedin.com/in/jebathurai-barnabas)',
+        unsafe_allow_html=True
+    )
+    st.write(
+        fa_li,
+        '[https://github.com/Jebathurai-JB][https://github.com/Jebathurai-JB)',
+        unsafe_allow_html=True
+    )
+
+
+
+with col2:
+    ksenia = Image.open('assets/Images/IMG_5151 - Kseniya Trusova.JPG')
+    st.image(ksenia)
+    st.header('Ksenia Trusova')
+    st.subheader('Task 9: Final Paper')
+    st.subheader('Task co-lead')
+    st.write('Found two articles for the Research task. One of them described two most popular public datasets PlantVillage and PlantDoc. Processed the articles found by the team for the Final Paper and created a literature overview with important details about the findings of other researchers in order to compare the results achieved by the team.')
+    st.write("\n")
+    st.write("\n")
+    st.write("\n")
+    st.write(
+        fa_li,
+        '[linkedin.com/in/kseniya-trusova-bitdn/](https://www.linkedin.com/in/kseniya-trusova-bitdn/)',
+        unsafe_allow_html=True
+    )
+    st.write(
+        fa_li,
+        '[github.com/kseniya-trusova](https://github.com/kseniya-trusova)',
+        unsafe_allow_html=True
+    )
+
+
+with col3:
+    whaner = Image.open('assets/Images/whaner_mam - Whaner Endo.jpg')
+    st.image(whaner)
+    st.header('Whaner Endo')
+    st.subheader('Task 2: Data Collection Preprocessing')
+    st.subheader('Team Member')
+    st.write('I collaborated with the project kick off, brainstorming about the problem statment and then with the next phase, helping the data collection, working with the EMBRAPA dataset. Attended several meetings and discussed the final paper.')
+    st.write("\n")
+    st.write("\n")
+    st.write("\n")
+    st.write(
+        fa_li,
+        '[linkedin.com/in/whaner](www.linkedin.com/in/whaner)',
+        unsafe_allow_html=True
+    )
+    st.write(
+        fa_li,
+        '[github.com/whaner](www.github.com/whaner)',
         unsafe_allow_html=True
     )

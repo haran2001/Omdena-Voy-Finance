@@ -16,15 +16,15 @@ st.markdown('''
 IMAGE_SIZE = (512, 512)
 
 col1, col2 = st.columns([2,1])
-with col1:
-    st.subheader("Siamese network (MobileNetV2 architecture)")
-    flowchart = Image.open('assets/Images/image6.png').resize(IMAGE_SIZE)
-    st.image(flowchart)
-with col2:
-    st.subheader("Steps")
-    st.write("The Siamese Network architecture is used for the coffee disease classification using images. \
-    The main goal for using this network is to build an embedding space where the different classes are separated into distinct clusters. \
-    The siamese network architecture is used to generate feature embeddings such that intra-class image features are close to each other in the embedding space, \
+# with col1:
+st.subheader("Siamese network (MobileNetV2 architecture)")
+flowchart = Image.open('assets/Images/image6.png').resize(IMAGE_SIZE)
+st.image(flowchart)
+# with col2:
+st.subheader("Steps")
+st.write("The Siamese Network architecture is used for the coffee disease classification using images. \
+The main goal for using this network is to build an embedding space where the different classes are separated into distinct clusters. \
+The siamese network architecture is used to generate feature embeddings such that intra-class image features are close to each other in the embedding space, \
     whereas the inter-class image features are further apart from each other. \
     The motivation behind this setup is to allow diverse input images that are semantically similar to be close to each other. \
     In the coffee dataset, we have single leaf images indoors on a white background under different lighting conditions, \

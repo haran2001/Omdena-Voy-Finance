@@ -38,7 +38,7 @@ newsize3 = (224, 224)
 newsize4 = (256, 256)
 
 # Get uploaded image
-image = get_image()
+image, state = get_image()
 classify_button = st.button("Classify", key='c_but', disabled=st.session_state.get("disabled", True))
 
 st.write("Model Predictions: ")

@@ -36,8 +36,10 @@ def load_model_from_gd(model_name):
     output = f'assets/models/{model_name}'
     # f_checkpoint = Path(f"models//{model_name}")
     with st.spinner("Downloading model... this may take awhile! \n Don't stop it!"):
-        gdown.download(id='1--eYkRRQl6CAuXxPFcgiFy0zdp67WTPE', output=output, quiet=False)
+        # https://drive.google.com/file/d/1klOgwmAUsjkVtTwMi9Cqyheednf_U18n/view
+        # gdown.download(id='1--eYkRRQl6CAuXxPFcgiFy0zdp67WTPE', output=output, quiet=False)
         # gdown.download(id='1--OCc8IBYaZdklXMXOsnsMYU3k1Ld95uSs', output=output, quiet=False)
+        gdown.download(f"https://drive.google.com/uc?id=1klOgwmAUsjkVtTwMi9Cqyheednf_U18n", output)
 
 def get_class(image, newsize, MODEL):
     image = image.resize(newsize)

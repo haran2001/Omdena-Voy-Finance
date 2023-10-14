@@ -96,9 +96,9 @@ def get_image():
         st.image(image)
 
     if st.session_state.get("uploader", True) or st.session_state.get("uploader_camera", True):
-        st.session_state.disabled = True
-    else:
         st.session_state.disabled = False
+    else:
+        st.session_state.disabled = True
     
     return image, st.session_state.disabled
         

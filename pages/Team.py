@@ -367,29 +367,6 @@ with col4:
     )
 
 with col1:
-    jebathurai = Image.open('assets/Images/IMG_5151 - Kseniya Trusova.JPG')
-    st.image(jebathurai)
-    st.header('Jebathurai I Barnabas')
-    st.subheader('Task 1: Research Knowledge Brainstorming')
-    st.subheader('Team Member')
-    st.write('After thorough planning and brainstorming, I have meticulously outlined a data science project, considering various aspects such as data sources, methodologies, and potential outcomes.')
-    st.write("\n")
-    st.write("\n")
-    st.write("\n")
-    st.write(
-        fa_li,
-        '[linkedin.com/in/jebathurai-barnabas](https://in.linkedin.com/in/jebathurai-barnabas)',
-        unsafe_allow_html=True
-    )
-    st.write(
-        fa_li,
-        '[https://github.com/Jebathurai-JB][https://github.com/Jebathurai-JB)',
-        unsafe_allow_html=True
-    )
-
-
-
-with col2:
     ksenia = Image.open('assets/Images/IMG_5151 - Kseniya Trusova.JPG')
     st.image(ksenia)
     st.header('Ksenia Trusova')
@@ -410,8 +387,7 @@ with col2:
         unsafe_allow_html=True
     )
 
-
-with col3:
+with col2:
     whaner = Image.open('assets/Images/whaner_mam - Whaner Endo.jpg')
     st.image(whaner)
     st.header('Whaner Endo')
@@ -431,3 +407,24 @@ with col3:
         '[github.com/whaner](www.github.com/whaner)',
         unsafe_allow_html=True
     )
+    
+with col3:
+    st.image(jebathurai)
+    st.header('Jebathurai I Barnabas')
+    st.subheader('Task 1: Research Knowledge Brainstorming')
+    st.subheader('Team Member')
+    st.write('After thorough planning and brainstorming, I have meticulously outlined a data science project, considering various aspects such as data sources, methodologies, and potential outcomes.')
+    st.write("\n")
+    st.write("\n")
+    st.write("\n")
+    st.write(
+        fa_li,
+        '[linkedin.com/in/jebathurai-barnabas](https://in.linkedin.com/in/jebathurai-barnabas)',
+        unsafe_allow_html=True
+    )
+    st.write(
+        fa_li,
+        '[https://github.com/Jebathurai-JB][https://github.com/Jebathurai-JB)',
+        unsafe_allow_html=True
+    )
+

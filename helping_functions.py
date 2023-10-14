@@ -81,8 +81,10 @@ def get_class_ensemble(image, newsize, MODEL_A, MODEL_B):
 #Wait until image is uplaoded and obtain image
 def get_image():
     image = None
-    upload_file = st.file_uploader("Upload your image here...", type=['png', 'jpeg', 'jpg'])
-    upload_camera = st.camera_input("Or take a picture here...")
+    st.subheader('Upload image here:')
+    upload_file = st.file_uploader("Upload", type=['png', 'jpeg', 'jpg'])
+    st.subheader('Take a photo here::')
+    upload_camera = st.camera_input("Camera:")
     
     if upload_file is not None:
         image = Image.open(upload_file)

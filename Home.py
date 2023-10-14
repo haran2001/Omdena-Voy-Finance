@@ -2,6 +2,7 @@ from helping_functions import load_model_h5, load_model_from_gd, predict, predic
 import streamlit as st
 from pathlib import Path
 from tensorflow.keras.models import load_model
+from keras import backend as K
 
 # Custom CNN    
 MODEL1 = load_model_h5('assets/models/model_CNN1_BRACOL.h5')

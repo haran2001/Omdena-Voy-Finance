@@ -13,10 +13,12 @@ st.markdown('''
 </style>
 ''', unsafe_allow_html=True)
 
+IMAGE_SIZE = (256, 256)
+
 col1, col2 = st.columns([2,1])
 with col1:
     st.subheader("Siamese network (MobileNetV2 architecture)")
-    flowchart = Image.open('assets/Images/image6.png').resize((128, 128))
+    flowchart = Image.open('assets/Images/image6.png').resize(IMAGE_SIZE)
     st.image(flowchart)
 with col2:
     st.subheader("Steps")

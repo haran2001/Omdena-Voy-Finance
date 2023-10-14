@@ -14,6 +14,7 @@ st.markdown('''
 ''', unsafe_allow_html=True)
 
 IMAGE_SIZE = (800, 800)
+st.header("Model Details:")
 
 col1, col2 = st.columns([2,1])
 st.subheader("Siamese network (MobileNetV2 architecture)")

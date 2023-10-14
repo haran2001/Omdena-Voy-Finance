@@ -82,9 +82,9 @@ def get_class_ensemble(image, newsize, MODEL_A, MODEL_B):
 def get_image():
     image = None
     st.subheader('Upload image here:')
-    upload_file = st.file_uploader('', type=['png', 'jpeg', 'jpg'])
+    upload_file = st.file_uploader('', type=['png', 'jpeg', 'jpg'], key='uploader')
     st.subheader('Take a photo here:')
-    upload_camera = st.camera_input('')
+    upload_camera = st.camera_input('', key='uploader_camera')
     
     if upload_file is not None:
         image = Image.open(upload_file)
@@ -94,8 +94,18 @@ def get_image():
         
     if image is not None:
         st.image(image)
+
+    if st.session_state.get("uploader", False):
+        st.session_state.disabled = False
+    else:
+        st.session_state.disabled = True
+
+    if st.session_state.get("uploader_camera", False):
+        st.session_state.disabled = False
+    else:
+        st.session_state.disabled = True
     
-    return image
+    return image, st.session_state.disabled
         
 # Function to get final predictions
 def predict(image, size, MODEL):

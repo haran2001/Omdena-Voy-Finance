@@ -1,6 +1,7 @@
 from helping_functions import load_model_h5, load_model_from_gd, predict, predict_ensemble, get_image, verify_checkpoint
 import streamlit as st
 from pathlib import Path
+from tensorflow.keras.models import load_model
 
 # Custom CNN    
 MODEL1 = load_model_h5('assets/models/model_CNN1_BRACOL.h5')
@@ -16,7 +17,7 @@ model3 = 'withouth_cersc_resnet50_deduplicated_mix_val_train_75acc.h5'
 f_checkpoint = Path(f"assets/models//{model3}")
 if verify_checkpoint(model3, f_checkpoint):
     # MODEL3 = load_model_h5(f_checkpoint)
-    MODEL3 = keras.models.load_model(f_checkpoint, custom_objects={"K": K})
+    MODEL3 = load_model(f_checkpoint, custom_objects={"K": K})
 
 
 #Resize requirements

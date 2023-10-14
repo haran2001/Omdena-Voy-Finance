@@ -27,7 +27,6 @@ IMAGE_SIZE = (128, 128)
 
 with col1:
     wallace = Image.open('assets/Images/foto_linkedin_2 - Wallace Ferreira.jpg').resize(IMAGE_SIZE)
-    # wallace = wallace.resize(IMAGE_SIZE)
     st.image(wallace)
     st.header('Wallace G. Ferreira')
     st.subheader('Task 1: Research Knowledge Brainstorming')
@@ -91,25 +90,6 @@ with col3:
     )
     
 with col4:
-    st.header('Maria Fisher')
-    st.subheader('Task 1: Research Knowledge Brainstorming')
-    st.subheader('Task Lead')
-    st.write('Assisting with background knowledge in plant pathogen, computer vision and writing a scientific article')
-    st.write("\n")
-    st.write("\n")
-    st.write("\n")
-    st.write(
-        fa_li,
-        '[linkedin.com/in/marÉ¨a-fÉ¨sher](https://www.linkedin.com/in/marÉ¨a-fÉ¨sher)',
-        unsafe_allow_html=True
-    )
-    st.write(
-        fa_li,
-        '[github.com/maria-fisher](https://github.com/maria-fisher)',
-        unsafe_allow_html=True
-    )
-    
-with col1:
     lucas = Image.open('assets/Images/eu_cortado - Lucas Vasconcelos.png').resize(IMAGE_SIZE)
     st.image(lucas)
     st.header('Lucas Vasconcelos Rocha')
@@ -131,7 +111,7 @@ with col1:
     )
 
 
-with col2:
+with col1:
     juan = Image.open('assets/Images/JCO2 - Juan Olano.jpeg').resize(IMAGE_SIZE)
     st.image(juan)
     st.header('Juan Olano')
@@ -153,7 +133,7 @@ with col2:
     )
 
 
-with col3:
+with col2:
     ss = Image.open('assets/Images/WhatsApp Image 2023-07-25 at 12.50.18 PM - Sourabh Singhal.jpeg').resize(IMAGE_SIZE)
     st.image(ss)
     st.header('SOURABH SINGHAL')
@@ -174,29 +154,7 @@ with col3:
         unsafe_allow_html=True
     )
 
-
-with col4:
-    # darshan = Image.open('assets/Images/')
-    # st.image(darshan)
-    st.header('Darshan Pai')
-    st.subheader('Task 1: Research Knowledge Brainstorming')
-    st.subheader('Task co-lead')
-    st.write('Decide on the problem formulation in the first week. Then I helped curate and augment the data for modeling. Tried a couple of modeling techniques and shared the results with the team.')
-    st.write("\n")
-    st.write("\n")
-    st.write("\n")
-    st.write(
-        fa_li,
-        '[linkedin.com/in/darshanpai](https://www.linkedin.com/in/darshanpai)',
-        unsafe_allow_html=True
-    )
-    st.write(
-        fa_li,
-        '[github.com/dpai](www.github.com/dpai)',
-        unsafe_allow_html=True
-    )
-
-with col1:
+with col3:
     tamiris = Image.open('assets/Images/foto2_t - Tamiris Crepalde.jpg').resize(IMAGE_SIZE)
     st.image(tamiris)
     st.header('Tamiris Crepalde')
@@ -217,29 +175,7 @@ with col1:
         unsafe_allow_html=True
     )
 
-with col2:
-    # kilian = Image.open('assets/Images/')
-    # st.image(kilian)
-    st.header('Kilian BÃ¤nziger')
-    st.subheader('Task 1: Research Knowledge Brainstorming')
-    st.subheader('Task Lead')
-    st.write('I coordinated a feasibility study to use drone images for the detection of sick plantation areas in coffee plantations ')
-    st.write("\n")
-    st.write("\n")
-    st.write("\n")
-    st.write(
-        fa_li,
-        '[linkedin.com/in/kilian-b%C3%A4nziger-9488581b2/](https://www.linkedin.com/in/kilian-b%C3%A4nziger-9488581b2/)',
-        unsafe_allow_html=True
-    )
-    st.write(
-        fa_li,
-        '[github.com/kilibenz](https://github.com/kilibenz)',
-        unsafe_allow_html=True
-    )
-
-
-with col3:
+with col4:
     leul = Image.open('assets/Images/omd - leul assaminew.jpg').resize(IMAGE_SIZE)
     st.image(leul)
     st.header('Leul Assaminew')
@@ -260,7 +196,7 @@ with col3:
         unsafe_allow_html=True
     )
 
-with col4:
+with col1:
     swati = Image.open('assets/Images/SRZPH - Swati Zambre.jpg').resize(IMAGE_SIZE)
     st.image(swati)
     st.header('Swati Zambre')
@@ -282,7 +218,7 @@ with col4:
     )
 
 
-with col1:
+with col2:
     anastasiia = Image.open('assets/Images/avatar - Anastasya Marchenko.jpg').resize(IMAGE_SIZE)
     st.image(anastasiia)
     st.header('Anastasiia Marchenko')
@@ -304,7 +240,7 @@ with col1:
     )
 
 
-with col2:
+with col3:
     aiman = Image.open('assets/Images/passport_size_photo - Aiman Lameesa.jpeg').resize(IMAGE_SIZE)
     st.image(aiman)
     st.header('Aiman Lameesa')
@@ -325,7 +261,7 @@ with col2:
         unsafe_allow_html=True
     )
 
-with col3:
+with col4:
     dimitra = Image.open('assets/Images/digital-photo - Dimitra Muni.JPG').resize(IMAGE_SIZE)
     st.image(dimitra)
     st.header('Dimitra Muni')
@@ -347,7 +283,7 @@ with col3:
     )
 
 
-with col4:
+with col1:
     paula = Image.open('assets/Images/foto - Paula Carolina Montagnana.jpg').resize(IMAGE_SIZE)
     st.image(paula)
     st.header('Paula Montagnana')
@@ -368,7 +304,7 @@ with col4:
         unsafe_allow_html=True
     )
 
-with col1:
+with col2:
     ksenia = Image.open('assets/Images/IMG_5151 - Kseniya Trusova.JPG').resize(IMAGE_SIZE)
     st.image(ksenia)
     st.header('Ksenia Trusova')
@@ -389,7 +325,7 @@ with col1:
         unsafe_allow_html=True
     )
 
-with col2:
+with col3:
     whaner = Image.open('assets/Images/whaner_mam - Whaner Endo.jpg').resize(IMAGE_SIZE)
     st.image(whaner)
     st.header('Whaner Endo')
@@ -410,6 +346,69 @@ with col2:
         unsafe_allow_html=True
     )
     
+
+
+with col4:
+    st.header('Maria Fisher')
+    st.subheader('Task 1: Research Knowledge Brainstorming')
+    st.subheader('Task Lead')
+    st.write('Assisting with background knowledge in plant pathogen, computer vision and writing a scientific article')
+    st.write("\n")
+    st.write("\n")
+    st.write("\n")
+    st.write(
+        fa_li,
+        '[linkedin.com/in/marÉ¨a-fÉ¨sher](https://www.linkedin.com/in/marÉ¨a-fÉ¨sher)',
+        unsafe_allow_html=True
+    )
+    st.write(
+        fa_li,
+        '[github.com/maria-fisher](https://github.com/maria-fisher)',
+        unsafe_allow_html=True
+    )
+
+
+
+with col1:
+    st.header('Darshan Pai')
+    st.subheader('Task 1: Research Knowledge Brainstorming')
+    st.subheader('Task co-lead')
+    st.write('Decide on the problem formulation in the first week. Then I helped curate and augment the data for modeling. Tried a couple of modeling techniques and shared the results with the team.')
+    st.write("\n")
+    st.write("\n")
+    st.write("\n")
+    st.write(
+        fa_li,
+        '[linkedin.com/in/darshanpai](https://www.linkedin.com/in/darshanpai)',
+        unsafe_allow_html=True
+    )
+    st.write(
+        fa_li,
+        '[github.com/dpai](www.github.com/dpai)',
+        unsafe_allow_html=True
+    )
+
+
+with col2:
+    st.header('Kilian BÃ¤nziger')
+    st.subheader('Task 1: Research Knowledge Brainstorming')
+    st.subheader('Task Lead')
+    st.write('I coordinated a feasibility study to use drone images for the detection of sick plantation areas in coffee plantations ')
+    st.write("\n")
+    st.write("\n")
+    st.write("\n")
+    st.write(
+        fa_li,
+        '[linkedin.com/in/kilian-b%C3%A4nziger-9488581b2/](https://www.linkedin.com/in/kilian-b%C3%A4nziger-9488581b2/)',
+        unsafe_allow_html=True
+    )
+    st.write(
+        fa_li,
+        '[github.com/kilibenz](https://github.com/kilibenz)',
+        unsafe_allow_html=True
+    )
+
+
 with col3:
     st.header('Jebathurai I Barnabas')
     st.subheader('Task 1: Research Knowledge Brainstorming')
@@ -428,4 +427,3 @@ with col3:
         '[https://github.com/Jebathurai-JB][https://github.com/Jebathurai-JB)',
         unsafe_allow_html=True
     )
-

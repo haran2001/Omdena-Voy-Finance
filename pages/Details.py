@@ -39,8 +39,8 @@ The siamese network architecture is used to generate feature embeddings such tha
 
 
 st.subheader("Customised CNN")
-image6 = Image.open('assets/Images/image6.png').resize(IMAGE_SIZE)
-st.image(image6)
+# image6 = Image.open('assets/Images/image6.png').resize(IMAGE_SIZE)
+# st.image(image6)
 st.subheader("Working")
 st.write("Detailed description of the Customised CNN model Architecture:\
 1. Rescaling Layer (Input Layer):\n\

@@ -83,7 +83,7 @@ def get_image():
     image = None
     st.subheader('Upload image here:')
     upload_file = st.file_uploader("Upload", type=['png', 'jpeg', 'jpg'])
-    st.subheader('Take a photo here::')
+    st.subheader('Take a photo here:')
     upload_camera = st.camera_input("Camera:")
     
     if upload_file is not None:

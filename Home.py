@@ -7,7 +7,7 @@ from keras import backend as K
 st.set_page_config(page_title='Plants diseases', page_icon=':herb:', initial_sidebar_state='auto')
 st.header('Omdena: Sao Paulo Chapter')
 st.subheader('Plant Disease Classificattion')
-st.write('The following application will help you identify the disease infecting a plant, if ou provide an image')
+st.write('The following application will help you identify the disease infecting a plant, if you provide an image')
 st.write('You can provide an image in one f te following ways: ')
 st.write('1. Upload an existing photo')
 st.write('2. Take a photo through our camera')

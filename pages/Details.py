@@ -83,9 +83,6 @@ The Dropout Layer, still with an output shape of (32, 64)Dropout is a regularisa
  \
 7. Dense Layer 2 \
 Dense Layer 2, the output layer, has an output shape of (32, 5) with 325 parameters. It consists of 5 neurons, one for each class in the classification task, \
-producing the final predictions. This layer uses Soft-Max activation to compute the probability for each of the five classes. \ 
-This model consists of a series of convolutional and max-pooling layers for feature extraction, followed by fully connected layers for classification. \
-Batch normalisation and dropout layers are used for regularisation and stability during training. \
-")
+producing the final predictions. This layer uses Soft-Max activation to compute the probability for each of the five classes. This model consists of a series of convolutional and max-pooling layers for feature extraction, followed by fully connected layers for classification. Batch normalisation and dropout layers are used for regularisation and stability during training. ")
 
 # st.write("hello world")

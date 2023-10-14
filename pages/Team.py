@@ -27,6 +27,7 @@ col1, col2, col3, col4 = st.columns((1, 1, 1, 1))
 
 with col1:
     wallace = Image.open('assets/Images/foto_linkedin_2 - Wallace Ferreira.jpg')
+    wallace.resize((108, 108))
     st.image(wallace)
     st.header('Wallace G. Ferreira')
     st.subheader('Task 1: Research Knowledge Brainstorming')

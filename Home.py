@@ -10,7 +10,8 @@ st.subheader('Plant Disease Classificattion')
 st.write('The following application will help you identify the disease infecting a plant, if you provide an image')
 st.write('You can provide an image in one of the following ways: ')
 st.write('1. Upload an existing photo')
-st.write('2. Take a photo through our camera')
+st.write('2. Take a photo through your camera')
+st.write('Once done press the classifiy button to ge results from each of our models')
 
 # Custom CNN    
 MODEL1 = load_model_h5('assets/models/model_CNN1_BRACOL.h5')

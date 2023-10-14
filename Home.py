@@ -4,6 +4,8 @@ from pathlib import Path
 from tensorflow.keras.models import load_model
 from keras import backend as K
 
+st.set_page_config(page_title='Plants diseases', page_icon=':herb:', initial_sidebar_state='auto')
+
 # Custom CNN    
 MODEL1 = load_model_h5('assets/models/model_CNN1_BRACOL.h5')
 
@@ -30,7 +32,6 @@ newsize4 = (256, 256)
 
 # Get uploaded image
 image = get_image()
-st.set_page_config(page_title='Plants diseases', page_icon=':herb:', initial_sidebar_state='auto')
 
 st.write("Model Predictions: ")
 if image is not None:

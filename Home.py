@@ -38,8 +38,10 @@ newsize3 = (224, 224)
 newsize4 = (256, 256)
 
 # Get uploaded image
+state = False
 image, state = get_image()
-classify_button = st.button("Classify", key='c_but', disabled=st.session_state.get("disabled", True))
+# classify_button = st.button("Classify", key='c_but', disabled=st.session_state.get("disabled", True))
+classify_button = st.button("Classify", key='c_but', state)
 
 st.write("Model Predictions: ")
 if image is not None and classify_button:

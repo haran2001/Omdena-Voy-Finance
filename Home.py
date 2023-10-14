@@ -38,20 +38,21 @@ newsize4 = (256, 256)
 
 # Get uploaded image
 image = get_image()
+classify_button = st.button("Classify", key='c_but', disabled=st.session_state.get("disabled", True))
 
 st.write("Model Predictions: ")
-if image is not None:
+if image is not None and classify_button:
     predicted_output1 = predict(image, newsize1, MODEL1)
     st.write("Cusomized CNN (BRACOL symptoms): ", predicted_output1['class'])
 
-if image is not None:
+if image is not None and classify_button:
     predicted_output3 = predict(image, newsize3, MODEL3)
     st.write("Resnet-v2: ", predicted_output3['class'])
     
-if image is not None:
+if image is not None and classify_button:
     predicted_output4 = predict(image, newsize4, MODEL4)
     st.write("Mobilenet-v2: ", predicted_output4['class'])
 
-if image is not None:
+if image is not None and classify_button:
     predicted_output2 = predict_ensemble(image, newsize, MODEL2, MODEL4)
     st.write("Sequential CNN and Mobilenet-v2 (Ensemble model): ", predicted_output2['class'])

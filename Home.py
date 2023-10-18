@@ -22,24 +22,12 @@ MODEL2 = load_model_h5('assets/models/Omdena_model1.h5')
 # Mobilenet-v2 
 MODEL4 = load_model_h5('assets/models/Omdena_model4.h5')
 
-# Resnet-v2
-model3 = 'withouth_cersc_resnet50_deduplicated_mix_val_train_75acc.h5'
-f_checkpoint = Path(f"assets/models//{model3}")
-if verify_checkpoint(model3, f_checkpoint, '1--eYkRRQl6CAuXxPFcgiFy0zdp67WTPE'):
-    MODEL3 = load_model_h5(f_checkpoint)
-    # MODEL3 = load_model(f_checkpoint, custom_objects={"K": K})
-    # MODEL3 = load_model(f_checkpoint)
 
-# Siamese Network
-model5 = 'Model_Siamese_5class_h5file.h5'
-f_checkpoint = Path(f"assets/models//{model5}")
-if verify_checkpoint(model5, f_checkpoint, '1klOgwmAUsjkVtTwMi9Cqyheednf_U18n'):
-    MODEL5 = load_model_h5(f_checkpoint)
     
 # CNN Pytorch model
 model6 = 'coffee_leaf_classifier.pth'
 f_checkpoint = Path(f"assets/models//{model6}")
-if verify_checkpoint(model6, f_checkpoint, '1-oJv2oQudEwbxnCLjBgMZFtN-FUJ0sW4'):
+if verify_checkpoint(model6, f_checkpoint, '1XroFNNq4FD8zE3DXDfBPj8NbD7cqYaaf'):
     MODEL6 = load_model_pth(f_checkpoint)
 
 ## Load ReferenceImages

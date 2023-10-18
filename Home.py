@@ -1,4 +1,4 @@
-from helping_functions import load_model_h5, load_model_from_gd, predict, predict_ensemble, get_image, verify_checkpoint
+from helping_functions import load_model_h5, load_model_from_gd, predict, predict_ensemble, get_image, verify_checkpoint, loadRefImages, buildPredictions
 import streamlit as st
 from pathlib import Path
 from tensorflow.keras.models import load_model
@@ -25,17 +25,26 @@ MODEL4 = load_model_h5('assets/models/Omdena_model4.h5')
 # Resnet-v2
 model3 = 'withouth_cersc_resnet50_deduplicated_mix_val_train_75acc.h5'
 f_checkpoint = Path(f"assets/models//{model3}")
-if verify_checkpoint(model3, f_checkpoint):
+if verify_checkpoint(model3, f_checkpoint, '1--eYkRRQl6CAuXxPFcgiFy0zdp67WTPE'):
     MODEL3 = load_model_h5(f_checkpoint)
     # MODEL3 = load_model(f_checkpoint, custom_objects={"K": K})
     # MODEL3 = load_model(f_checkpoint)
 
+# Siamese Network
+model5 = 'Model_Siamese_5class_h5file.h5'
+f_checkpoint = Path(f"assets/models//{model5}")
+if verify_checkpoint(model5, f_checkpoint, '1klOgwmAUsjkVtTwMi9Cqyheednf_U18n'):
+    MODEL5 = load_model_h5(f_checkpoint)
+
+## Load ReferenceImages
+refImages = loadRefImages()
 
 #Resize requirements
 newsize  = (256, 256)
 newsize1 = (256, 256)
 newsize3 = (224, 224)
 newsize4 = (256, 256)
+newsize5 = (256, 256)
 
 # Get uploaded image
 state = False
@@ -54,6 +63,10 @@ if classify_button:
 if classify_button:
     predicted_output4 = predict(image, newsize4, MODEL4)
     st.write("Mobilenet-v2: ", predicted_output4['class'])
+
+if classify_button:
+    predicted_output5 = buildPredictions([image], refImages, newsize5, MODEL5, 3)
+    st.write("Siamese Network: ", predicted_output5['class'])
 
 if classify_button:
     predicted_output2 = predict_ensemble(image, newsize, MODEL2, MODEL4)

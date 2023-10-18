@@ -25,18 +25,18 @@ CLASS_NAMES = ['Cescospora', 'Healthy', 'Miner', 'Phoma', 'Rust']
 def load_model_h5(path):
     return load_model(path, compile=False)
 
-def verify_checkpoint(model_name, f_checkpoint):
+def verify_checkpoint(model_name, f_checkpoint, gID):
     if not f_checkpoint.exists():
-        load_model_from_gd(model_name)
+        load_model_from_gd(model_name, gID)
     return f_checkpoint.exists()
 
-def load_model_from_gd(model_name):
+def load_model_from_gd(model_name, gID):
     save_dest = Path('models')
     save_dest.mkdir(exist_ok=True)
     output = f'assets/models/{model_name}'
     # f_checkpoint = Path(f"models//{model_name}")
     with st.spinner("Downloading model... this may take awhile! \n Don't stop it!"):
-        gdown.download(id='1--eYkRRQl6CAuXxPFcgiFy0zdp67WTPE', output=output, quiet=False)
+        gdown.download(id=gID, output=output, quiet=False)
         # gdown.download(f"https://drive.google.com/uc?id=1klOgwmAUsjkVtTwMi9Cqyheednf_U18n", output)
 
 def get_class(image, newsize, MODEL):
@@ -149,3 +149,40 @@ def crop(img_arr):
     crop = img_arr[ymin:ymax+3, xmin:xmax] # crop the image at the bounds adding back the two blackened rows at the bottom
     resized_img = resize(crop, (125, 125), anti_aliasing=True)
     return resized_img
+
+def buildPredictions(inputImages, refImages, size, model, K):
+  predicted_label = ''
+  for id, image in enumerate(inputImages):
+    predictions = calculateDistances(image, refImages,size, model)
+
+    predicted_class_id = np.argpartition(predictions, K)
+    label_c = []
+    for j in predicted_class_id[:K]:
+        label_c.append(CLASS_NAMES[int(j/K)])
+    predicted_label = max(set(label_c), key=label_c.count)
+
+  return {"class": predicted_label, "confidence": float(label_c.count(predicted_label)/K)}
+
+def calculateDistances(inputImage, refImages, size, model):
+  predictions = []
+  imageA = cv.resize(np.array(inputImage), size)
+  imageA = np.expand_dims(imageA, axis=0)
+
+  for j, path in enumerate(refImages):
+    imageB = cv.imread(str(path))
+    imageB = cv.cvtColor(imageB, cv.COLOR_BGR2RGB)
+    imageB = np.expand_dims(imageB, axis=0)
+    preds = model.predict([imageA, imageB])
+    predictions.append(preds[0][0])
+
+  return predictions
+
+def loadRefImages(classes=CLASS_NAMES):
+    ##  Note that for evaluation we will not used CLASSNAMES list initialized earlier.
+    ## We try to get class labels we know are in the dataset. 
+    refImagesList = []
+    for c in classes:
+        img_path = Path('assets/ReferenceImages') / c
+        for file in img_path.glob(f'*'):
+            refImagesList.append(file)
+    return refImagesList

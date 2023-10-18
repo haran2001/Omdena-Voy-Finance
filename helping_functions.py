@@ -81,10 +81,12 @@ def load_model_h5(path):
     return load_model(path, compile=False)
     
 def load_model_pth(path):
+    #device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model = torch.load(path, map_location=torch.device('cpu'))
     model.eval()
+    #model.eval()
     return model
-
+    
 def verify_checkpoint(model_name, f_checkpoint, gID):
     if not f_checkpoint.exists():
         load_model_from_gd(model_name, gID)
@@ -128,7 +130,7 @@ def get_class_pytorch(image, MODEL):
 
     # Get the predicted class
     _, predicted_class = torch.max(output, 1)
-    predicted_class_name = class_names[predicted_class.item()]
+    predicted_class_name = CLASS_NAMES[predicted_class.item()]
     return predicted_class_name
     
 #Function to get prediction array for a model (used in ensembling)

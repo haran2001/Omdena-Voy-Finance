@@ -3,6 +3,7 @@ import streamlit as st
 from pathlib import Path
 from tensorflow.keras.models import load_model
 from keras import backend as K
+import torch.nn as nn
 
 st.set_page_config(page_title='Plants diseases', page_icon=':herb:', initial_sidebar_state='auto')
 st.header('Omdena: Sao Paulo Chapter')

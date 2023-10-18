@@ -1,4 +1,4 @@
-from helping_functions import load_model_h5, load_model_from_gd, predict, predict_ensemble, get_image, verify_checkpoint, loadRefImages, buildPredictions
+from helping_functions import load_model_h5, load_model_from_gd, predict, predict_ensemble, get_image, verify_checkpoint, loadRefImages, buildPredictions, load_model_pth, get_class_pytorch
 import streamlit as st
 from pathlib import Path
 from tensorflow.keras.models import load_model
@@ -35,6 +35,12 @@ model5 = 'Model_Siamese_5class_h5file.h5'
 f_checkpoint = Path(f"assets/models//{model5}")
 if verify_checkpoint(model5, f_checkpoint, '1klOgwmAUsjkVtTwMi9Cqyheednf_U18n'):
     MODEL5 = load_model_h5(f_checkpoint)
+    
+# CNN Pytorch model
+model6 = 'coffee_leaf_classifier.pth'
+f_checkpoint = Path(f"assets/models//{model6}")
+if verify_checkpoint(model6, f_checkpoint, '1-oJv2oQudEwbxnCLjBgMZFtN-FUJ0sW4'):
+    MODEL6 = load_model_pth(f_checkpoint)
 
 ## Load ReferenceImages
 refImages = loadRefImages()
@@ -71,3 +77,7 @@ if classify_button:
 if classify_button:
     predicted_output2 = predict_ensemble(image, newsize, MODEL2, MODEL4)
     st.write("Sequential CNN and Mobilenet-v2 (Ensemble model): ", predicted_output2['class'])
+    
+if classify_button:
+    predicted_output6 = get_class_pytorch(image, MODEL6)
+    st.write("PyTorch CNN: ", predicted_output6)

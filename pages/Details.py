@@ -34,7 +34,7 @@ The siamese network architecture is used to generate feature embeddings such tha
     The advantage of using this method is 2-fold: \
     One can use a simple K-nearest neighbour approach to classify the input image. \
     The setup can visually explain why the model chose the particular class. \
-    The following K-NN strategy is used for inference: \
+    For classification using K-NN, the value of K is chosen to be 3. \
     ")
 
 

@@ -89,25 +89,6 @@ image = get_image()
 classify_button = st.button("Classify", key='c_but', disabled=st.session_state.get("disabled", True))
 
 st.write("Model Predictions: ")
-if classify_button:
-    predicted_output1 = predict(image, newsize1, MODEL1)
-    st.write("Cusomized CNN (BRACOL symptoms): ", predicted_output1['class'])
-
-if classify_button:
-    predicted_output3 = predict(image, newsize3, MODEL3)
-    st.write("Resnet-v2: ", predicted_output3['class'])
-    
-if classify_button:
-    predicted_output4 = predict(image, newsize4, MODEL4)
-    st.write("Mobilenet-v2: ", predicted_output4['class'])
-
-if classify_button:
-    predicted_output5 = buildPredictions([image], refImages, newsize5, MODEL5, 3)
-    st.write("Siamese Network: ", predicted_output5['class'])
-
-if classify_button:
-    predicted_output2 = predict_ensemble(image, newsize, MODEL2, MODEL4)
-    st.write("Sequential CNN and Mobilenet-v2 (Ensemble model): ", predicted_output2['class'])
     
 if classify_button:
     predicted_output6 = get_class_pytorch(image, MODEL6)

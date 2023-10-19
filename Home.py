@@ -7,12 +7,13 @@ import torch.nn as nn
 
 st.set_page_config(page_title='Plants diseases', page_icon=':herb:', initial_sidebar_state='auto')
 st.header('Omdena: Sao Paulo Chapter', anchor=False)
-st.subheader('Plant Disease Classificattion', anchor=False)
+st.subheader('Plant Disease Classification', anchor=False)
 st.write('The following application will help you identify the disease infecting a plant, if you provide an image os the leaf.')
 st.write('You can provide an image in one of the following ways: ')
 st.write('1. Upload an existing photo')
 st.write('2. Take a photo through your camera')
 st.write('Once done press the classifiy button to the results from each of our models')
+st.write('Note: Make sure your image has 3 RGB channels. Do not use images that also have a transparancy channel.')
 
 # PyTorch Model
 class CoffeeLeafClassifier(nn.Module):

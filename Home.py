@@ -108,11 +108,11 @@ if classify_button:
 
 if classify_button:
     predicted_output3 = predict(image, newsize3, MODEL3)
-    st.write("Resnet-v2: ", predicted_output3['class'])
+    st.write("Resnet50 deduplicated: ", predicted_output3['class'])
     
-if classify_button:
-    predicted_output4 = predict(image, newsize4, MODEL4)
-    st.write("Mobilenet-v2: ", predicted_output4['class'])
+# if classify_button:
+#     predicted_output4 = predict(image, newsize4, MODEL4)
+#     st.write("Mobilenet-v2: ", predicted_output4['class'])
 
 if classify_button:
     predicted_output5 = buildPredictions([image], refImages, newsize5, MODEL5, 3)

@@ -6,8 +6,8 @@ from keras import backend as K
 import torch.nn as nn
 
 st.set_page_config(page_title='Plants diseases', page_icon=':herb:', initial_sidebar_state='auto')
-st.header('Omdena: Sao Paulo Chapter')
-st.subheader('Plant Disease Classificattion')
+st.header('Omdena: Sao Paulo Chapter', anchor=False)
+st.subheader('Plant Disease Classificattion', anchor=False)
 st.write('The following application will help you identify the disease infecting a plant, if you provide an image os the leaf.')
 st.write('You can provide an image in one of the following ways: ')
 st.write('1. Upload an existing photo')

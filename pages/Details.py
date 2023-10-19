@@ -37,7 +37,17 @@ The siamese network architecture is used to generate feature embeddings such tha
     For classification using K-NN, the value of K is chosen to be 3. \
     ")
 
-
+st.subheader("Fine-tuned ResNet 50")
+st.subheader("Working")
+st.write("Built on a Sequential model in Keras, initially incorporating a pre-trained ResNet model. \
+Includes MaxPooling2D for downsampling and a Flatten layer for reshaping. \
+Consists of three Dense layers with dropout layers in between for regularization; the neuron configurations are\
+2048, 4096, and 2048 with ReLU activation.\
+The output layer has 4 units with softmax activation, targeting 4 classes ['Healthy', 'Miner', 'Phoma', 'Rust'].\
+Trained on the Cafe Arabic dataset with 3900 images over 10 epochs; batch size set at 128 for training and 512 for\
+testing.\
+Early stopping mechanism implemented to prevent overfitting.\
+    ")
 
 st.subheader("Customised CNN")
 # image6 = Image.open('assets/Images/image6.png').resize(IMAGE_SIZE)

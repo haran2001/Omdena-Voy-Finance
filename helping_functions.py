@@ -23,7 +23,7 @@ from torchvision import transforms
 
 
 # Classes
-CLASS_NAMES = ['Cescospora', 'Healthy', 'Miner', 'Phoma', 'Rust']
+CLASS_NAMES = ['Cercospora', 'Healthy', 'Miner', 'Phoma', 'Rust']
 
 # Define the transformations for PyTorch CNN
 transform = transforms.Compose([

@@ -1,4 +1,5 @@
 import streamlit as st
+import streamlit as st
 from keras.applications.vgg16 import VGG16
 import pickle
 from skimage.transform import resize
@@ -17,14 +18,31 @@ import urllib.request
 import gdown
 from pathlib import Path
 
+import torch
+from torchvision import transforms
+
 
 # Classes
 CLASS_NAMES = ['Cescospora', 'Healthy', 'Miner', 'Phoma', 'Rust']
 
+# Define the transformations for PyTorch CNN
+transform = transforms.Compose([
+    transforms.Resize((256, 256)),
+    transforms.ToTensor(),
+    transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]) # Adjust mean and std if necessary
+])
+
 @st.cache_resource
 def load_model_h5(path):
     return load_model(path, compile=False)
-
+    
+def load_model_pth(path):
+    #device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    model = torch.load(path, map_location=torch.device('cpu'))
+    model.eval()
+    #model.eval()
+    return model
+    
 def verify_checkpoint(model_name, f_checkpoint, gID):
     if not f_checkpoint.exists():
         load_model_from_gd(model_name, gID)
@@ -52,6 +70,24 @@ def get_class(image, newsize, MODEL):
     confidence = np.max(predictions[0])
 
     return predicted_class, confidence
+   
+# image preprocessing for PyTorch CNN and get prediction class
+def get_class_pytorch(image, MODEL):
+    image_tensor = transform(image)
+
+    # Add a batch dimension (since models expect a batch of images, not a single image)
+    image_tensor = image_tensor.unsqueeze(0)
+
+    # Move to the same device as the model (if using CUDA)
+    image_tensor = image_tensor.to("cpu")
+
+    # Pass the image through the model
+    output = MODEL(image_tensor)
+
+    # Get the predicted class
+    _, predicted_class = torch.max(output, 1)
+    predicted_class_name = CLASS_NAMES[predicted_class.item()]
+    return predicted_class_name
     
 #Function to get prediction array for a model (used in ensembling)
 def get_all_predictions(model, img):

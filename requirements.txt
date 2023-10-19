@@ -13,3 +13,5 @@ scikit-image
 scikit-learn
 scikeras
 gdown
+torchvision
+torch

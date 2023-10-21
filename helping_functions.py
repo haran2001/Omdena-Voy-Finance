@@ -20,7 +20,7 @@ from pathlib import Path
 
 import torch
 from torchvision import transforms
-
+import torch.nn as nn
 
 # Classes
 CLASS_NAMES = ['Cercospora', 'Healthy', 'Miner', 'Phoma', 'Rust']

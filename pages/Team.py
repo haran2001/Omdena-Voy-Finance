@@ -435,19 +435,15 @@ with col4:
     st.subheader('Task 5: Models Improvement')
     st.subheader('Task co-lead')
     st.write("- Created folders for the team, and uploaded problem statements to the Google Shared drive. \
-- Introduced and started work on the trello board and how to anwer the big picture questions of our data.\
-- Trello - https://trello.com/b/IDf6jsPx/omdena-sao-paulo-plant-disease-database\
-- Sheet - https://docs.google.com/spreadsheets/d/1rdZglJ6uubd-y3WaROQKOpZe0uluyVPoIdcGNAsFLhs/edit?usp=sharing\
-\
-- Checked and curated a lot of datasets on the Trello board so to get the Coffee dataasets we need and put aside we don't need as yet.\
-- Collected 11 UAV image datasets/data sources for the Remote sensing task, curated and checked to make sure we have data about coffee.\
-- Came up with and lead a team exercise that will enhance and promote Trust and belief in each other (the Huddle) and had a meet with a few collaborators\
-\
-- Merged some Coffee dataasets we needed\
-- Started and lead a first draft of the \"introduction\" for the Final writeup\
-- Followed up on collaborators to submit work for final write up.\
-- Created a Template to report work that has been done by collaborators and each Task \
-- Created and drafted a Template to Report on all the models that have been done")
+            - Introduced and started work on the trello board and how to anwer the big picture questions of our data.\
+            - Checked and curated a lot of datasets on the Trello board so to get the Coffee dataasets we need and put aside we don't need as yet.\
+            - Collected 11 UAV image datasets/data sources for the Remote sensing task, curated and checked to make sure we have data about coffee.\
+            - Came up with and lead a team exercise that will enhance and promote Trust and belief in each other (the Huddle) and had a meet with a few collaborators\
+            - Merged some Coffee datasets we needed\
+            - Started and lead a first draft of the \"introduction\" for the Final writeup\
+            - Followed up on collaborators to submit work for final write up.\
+            - Created a Template to report work that has been done by collaborators and each Task \
+            - Created and drafted a Template to Report on all the models that have been done")
     st.write("\n")
     st.write("\n")
     st.write("\n")

@@ -448,3 +448,22 @@ with col4:
         '[github.com/sabunity][https://github.com/sabunity)',
         unsafe_allow_html=True
     )
+
+with col3:
+    st.header('Alpha Lossangoyi-Nanga')
+    st.subheader('Task 3: Data Augmentation')
+    st.subheader('Task Lead')
+    st.write("As Task Lead, I organised and steered the Data Augmentation Task. I collected the multiple proposals of the contributors. I made all the contributors agree on a written and concrete battle plan for the Data Augmentation task. This battle plan consisted of a breakdown of all the necessary subtasks of the Data Augmentation task. The subtasks were discussed, documented, prioritised and assigned. During the weekly meetings, the contributors reported the progress of their assigned subtasks. We updated our battle plan with task statues.I coordinated with the previous \(Data Collection\) and subsequent \(Data Modelling\) Tasks.")
+    st.write("\n")
+    st.write("\n")
+    st.write("\n")
+    st.write(
+        fa_li,
+        '[linkedin.com/in/alphalossangoyi](linkedin.com/in/alphalossangoyi)',
+        unsafe_allow_html=True
+    )
+    st.write(
+        fa_li,
+        '[github.com/AlphaLossangoyiNanga2][https://github.com/AlphaLossangoyiNanga2)',
+        unsafe_allow_html=True
+    )

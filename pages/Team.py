@@ -429,7 +429,7 @@ with col3:
     )
 
 with col4:
-    sabelo = Image.open('assets/Images/Mbatha 2 - Sabelo Mbatha').resize(IMAGE_SIZE)
+    sabelo = Image.open('assets/Images/Mbatha 2 - Sabelo Mbatha.jpg').resize(IMAGE_SIZE)
     st.image(sabelo)
     st.header('Sabelo Mbatha')
     st.subheader('Task 5: Models Improvement')

@@ -29,8 +29,6 @@ model3 = 'withouth_cersc_resnet50_deduplicated_mix_val_train_75acc.h5'
 f_checkpoint = Path(f"assets/models//{model3}")
 if verify_checkpoint(model3, f_checkpoint, '1--eYkRRQl6CAuXxPFcgiFy0zdp67WTPE'):
     MODEL3 = load_model_h5(f_checkpoint)
-    # MODEL3 = load_model(f_checkpoint, custom_objects={"K": K})
-    # MODEL3 = load_model(f_checkpoint)
 
 # Siamese Network
 model5 = 'Model_Siamese_5class_h5file.h5'
@@ -68,10 +66,6 @@ if classify_button:
     predicted_output3 = predict(image, newsize3, MODEL3)
     st.write("Resnet50 deduplicated: ", predicted_output3['class'])
     
-# if classify_button:
-#     predicted_output4 = predict(image, newsize4, MODEL4)
-#     st.write("Mobilenet-v2: ", predicted_output4['class'])
-
 if classify_button:
     predicted_output5 = buildPredictions([image], refImages, newsize5, MODEL5, 3)
     st.write("Siamese Network: ", predicted_output5['class'])

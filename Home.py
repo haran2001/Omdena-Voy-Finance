@@ -1,4 +1,4 @@
-from helping_functions import load_model_h5, load_model_from_gd, predict, predict_ensemble, get_image, verify_checkpoint, loadRefImages, buildPredictions, load_model_pth, get_class_pytorch
+from helping_functions import load_model_h5, load_model_from_gd, predict, predict_ensemble, get_image, verify_checkpoint, loadRefImages, buildPredictions, load_model_pth, get_class_pytorch, CoffeeLeafClassifier
 import streamlit as st
 from pathlib import Path
 from tensorflow.keras.models import load_model

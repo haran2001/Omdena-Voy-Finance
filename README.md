@@ -4,6 +4,7 @@
 2. The deployed the model is available here: [Omdena-Plant-Disease-Classification](https://omdena-plant-disease-classification.streamlit.app/)
 3. Select the file to upload and the result will be displayed on the screen.
 4. Upload through web camera added
+5. Sometimes the app might run out of memory, just reboot the app from the main streamlit page. (Can only be done by owner)
 
 
 ![ss1](https://github.com/haran2001/Omdena-Plant-Disease-Classification/assets/56040092/7a887906-37cb-47a3-98ef-1f4ce4af3e75)

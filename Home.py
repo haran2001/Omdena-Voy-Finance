@@ -29,7 +29,7 @@ AVG = 951938.0811764706
 frequency_ratio = 2.09 / 3.05
 
 name = st.text_input("Enter the company name 👇")
-df = pd.read_csv("assets\csv\DDS.csv")
+df = pd.read_csv("assets/csv/DDS.csv")
 
 # if True:
 # try:

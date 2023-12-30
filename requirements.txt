@@ -15,3 +15,5 @@ scikeras
 gdown
 torchvision
 torch
+
+selenium

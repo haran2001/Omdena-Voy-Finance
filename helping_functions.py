@@ -1,22 +1,14 @@
 import requests
 from bs4 import BeautifulSoup
-import lxml
 from selenium import webdriver
-from random import seed
-from random import randint
-from time import sleep
+from random import seed, randint
 import pandas as pd
 
-
-from selenium import webdriver
-from time import sleep
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 
-from bs4 import BeautifulSoup
 import requests
-from selenium import webdriver
 import time
 
 
@@ -149,15 +141,15 @@ def get_likes_followers(fb_url):
 
     driver = webdriver.Chrome()
     driver.get(fb_url)
-    sleep(get_wait(5))
+    time.sleep(get_wait(5))
     get_source = driver.page_source
-    sleep(get_wait(5))
+    time.sleep(get_wait(5))
     soup = BeautifulSoup(get_source, "html.parser")
-    sleep(get_wait(5))
+    time.sleep(get_wait(5))
     likes = soup.find("a", {"href": url_likes})
-    sleep(get_wait(5))
+    time.sleep(get_wait(5))
     followers = soup.find("a", {"href": url_followers})
-    sleep(get_wait(5))
+    time.sleep(get_wait(5))
     driver.quit()
 
     if likes.text:
